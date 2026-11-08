@@ -29,7 +29,7 @@ h2{font-size:1.6rem;margin:14px 0 4px}
 .card h3{margin:2px 0 4px;font-size:1.25rem}
 .art{height:110px;position:relative;overflow:hidden}
 .art svg{width:100%;height:100%;display:block}
-.photo{height:170px;background-size:cover;background-position:center}
+.duo{display:grid;grid-template-columns:3fr 2fr;gap:3px;height:150px;border-bottom:3px solid var(--ink)}.duo div{background-size:cover;background-position:center}.photo{height:170px;background-size:cover;background-position:center}
 .time{display:inline-block;background:var(--ink);color:var(--sun);font-weight:900;padding:2px 12px;border-radius:99px;font-size:.9rem}
 .meta{color:var(--mute);font-size:.92rem}
 .tag{display:inline-block;font-size:.72rem;font-weight:800;padding:2px 9px;border-radius:99px;margin-left:6px;vertical-align:middle;color:#fff;background:var(--grape)}
@@ -127,7 +127,7 @@ footer{text-align:center;color:var(--mute);font-size:.78rem;padding:10px 16px 30
   </section>
 </main>
 <footer>Saved on this device only. Courses and times are requests, not confirmations.<br>
-Photos: Stan Shebs via Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a> (Mesquite street scene, CasaBlanca Resort, Mesquite banner). Course illustrations are original art, not photos of the courses.</footer>
+Course photos from GolfNevada.com, oasisgolfclub.com and coyotesprings.com, shown for trip planning. Oasis photos show the Oasis Golf Club in general, not a specific course. Town photos: Stan Shebs via Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>.</footer>
 
 <script>
 function scene(a,b,c,flag){ // illustrated course banner
@@ -139,21 +139,21 @@ function scene(a,b,c,flag){ // illustrated course banner
 const days=[
  {id:'fri',label:'Fri',date:'Jan 22',title:'Friday, Jan 22',items:[
   {t:'Morning',n:'🚗 Travel to Mesquite',d:'Arrive, drop bags, check-in may not be open yet. Plan to head straight to the course.',tag:'Travel',cls:'b'},
-  {t:'~11:00 AM',n:'Wolf Creek Golf Club',d:'Requested tee time. The package host. Confirm group of 4 and cart.',q:'Wolf Creek Golf Course Mesquite NV',art:['#27b4ff','#bde9ff','#e9a15b',0],beer:'First beer of the trip. Grab it at the turn.'},
+  {t:'~11:00 AM',n:'Wolf Creek Golf Club',d:'Requested tee time. The package host. Confirm group of 4 and cart.',q:'Wolf Creek Golf Course Mesquite NV',photos:['wolfcreek','wolfcreek2'],beer:'First beer of the trip. Grab it at the turn.'},
   {t:'Evening',n:'🏨 Check in at Eureka Casino Resort (maybe)',d:'Hotel is tentative, not booked. Dinner on site or in town.',tag:'Tentative',cls:'t',q:'Eureka Casino Resort Mesquite NV',beer:'Opening night. Toast the trip.'}]},
  {id:'sat',label:'Sat',date:'Jan 23',title:'Saturday, Jan 23',items:[
-  {t:'7:30 AM',n:'Conestoga Golf Club',d:'Early start, Mesquite. Round one of the 36.',q:'Conestoga Golf Club Mesquite NV',art:['#ff9a5a','#ffe0a8','#c9774a',1],beer:'Early tee time. Coffee first, beer at the turn.'},
+  {t:'7:30 AM',n:'Conestoga Golf Club',d:'Early start, Mesquite. Round one of the 36.',q:'Conestoga Golf Club Mesquite NV',photos:['conestoga1','conestoga2'],beer:'Early tee time. Coffee first, beer at the turn.'},
   {t:'Midday',n:'🌮 Lunch and reset',d:'Short break between rounds.',tag:'Break',cls:'b',beer:'Cold one with lunch.'},
-  {t:'~1:00 PM',n:'Oasis Golf Club – Palmer',d:'Arnold Palmer designed course at the Oasis.',q:'Oasis Golf Club Palmer Course Mesquite NV',art:['#7b4bff','#c9b5ff','#5aa6d6',2],beer:'Palmers pair well with a Palmer.'},
+  {t:'~1:00 PM',n:'Oasis Golf Club – Palmer',d:'Arnold Palmer designed course at the Oasis.',q:'Oasis Golf Club Palmer Course Mesquite NV',photos:['oasis1','oasis2'],beer:'Palmers pair well with a Palmer.'},
   {t:'Evening',n:'🍽️ Dinner',d:'Open.',tag:'Open',beer:'Big Saturday night. Pick a spot with taps.'}]},
  {id:'sun',label:'Sun',date:'Jan 24',title:'Sunday, Jan 24',items:[
-  {t:'7:30 AM',n:'Oasis Golf Club – Canyons',d:'Second Oasis layout.',q:'Oasis Golf Club Canyons Course Mesquite NV',art:['#27d3b4','#c9fff1','#d98b5f',3],beer:'Canyon carries. Pace yourself.'},
+  {t:'7:30 AM',n:'Oasis Golf Club – Canyons',d:'Second Oasis layout.',q:'Oasis Golf Club Canyons Course Mesquite NV',photos:['oasis3','oasis2'],beer:'Canyon carries. Pace yourself.'},
   {t:'Midday',n:'🌮 Lunch and reset',d:'Short break between rounds.',tag:'Break',cls:'b',beer:'Cold one with lunch.'},
-  {t:'~1:00 PM',n:'CasaBlanca Golf Club',d:'Afternoon round, Mesquite. Home of the pink resort.',q:'CasaBlanca Golf Club Mesquite NV',photo:'img/casablanca.jpg',beer:'Resort bar after the round.'},
+  {t:'~1:00 PM',n:'CasaBlanca Golf Club',d:'Afternoon round, Mesquite. Home of the pink resort.',q:'CasaBlanca Golf Club Mesquite NV',photos:['casablanca2','casablanca3'],beer:'Resort bar after the round.'},
   {t:'Evening',n:'🍽️ Last night dinner',d:'Open.',tag:'Open',beer:'Final night. Settle the bets.'}]},
  {id:'mon',label:'Mon',date:'Jan 25',title:'Monday, Jan 25',items:[
   {t:'Morning',n:'🧳 Check out',d:'Check out of both rooms before heading to the course.',tag:'Hotel',cls:'b'},
-  {t:'9–10 AM',n:'Coyote Springs Golf Club',d:'Final round. Coyote Springs is a drive from Mesquite (roughly an hour, verify). Leave early enough for the tee time.',q:'Coyote Springs Golf Club Nevada',art:['#ff5a8a','#ffd1e0','#b98a5f',4],beer:'Victory beer at the 19th hole.'},
+  {t:'9–10 AM',n:'Coyote Springs Golf Club',d:'Final round. Coyote Springs is a drive from Mesquite (roughly an hour, verify). Leave early enough for the tee time.',q:'Coyote Springs Golf Club Nevada',photos:['coyote1','coyote2'],beer:'Victory beer at the 19th hole.'},
   {t:'After',n:'🚗 Drive home',d:'Designated driver gets the first pick of the playlist.',tag:'Travel',cls:'b'}]}
 ];
 const checks=['Reply to Wolf Creek rep and confirm package price','Decide and book lodging (Eureka Casino?): 2 rooms, 2 queens each, Fri to Mon','Lock Fri Wolf Creek ~11 AM','Lock Sat Conestoga 7:30 AM','Lock Sat Oasis Palmer ~1 PM','Lock Sun Oasis Canyons 7:30 AM','Lock Sun CasaBlanca ~1 PM','Lock Mon Coyote Springs 9-10 AM','Sort cars and who is driving','Collect money from the other 3 golfers','Decide on shipping clubs or hauling them','Buy the beer (and the water)'];
@@ -166,7 +166,7 @@ function show(id){document.querySelectorAll('.panel').forEach(p=>p.classList.tog
 $('#tabs').onclick=e=>{const b=e.target.closest('button');if(b)show(b.dataset.t)};
 
 days.forEach(d=>{
- $('#p-'+d.id).innerHTML=`<h2>${d.title}</h2>`+d.items.map(i=>`<div class="card">${i.photo?`<div class="photo" style="background-image:url(${i.photo})"></div>`:i.art?`<div class="art">${scene(...i.art)}</div>`:''}<div class="body"><span class="time">${i.t}</span>${i.tag?`<span class="tag ${i.cls||''}">${i.tag}</span>`:''}<h3>${i.n}</h3>${i.d?`<div class="meta">${i.d}</div>`:''}${i.q?`<div class="links"><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(i.q)}">📍 Map</a><a target="_blank" rel="noopener" href="https://www.google.com/search?q=${encodeURIComponent(i.q+' tee times')}">⏰ Tee times</a></div>`:''}</div>${i.beer?`<div class="beerbar">🍺 ${i.beer}</div>`:''}</div>`).join('');
+ $('#p-'+d.id).innerHTML=`<h2>${d.title}</h2>`+d.items.map(i=>`<div class="card">${i.photos?`<div class="duo">${i.photos.map(x=>`<div style="background-image:url(img/courses/${x}_s.jpg)"></div>`).join('')}</div>`:''}<div class="body"><span class="time">${i.t}</span>${i.tag?`<span class="tag ${i.cls||''}">${i.tag}</span>`:''}<h3>${i.n}</h3>${i.d?`<div class="meta">${i.d}</div>`:''}${i.q?`<div class="links"><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(i.q)}">📍 Map</a><a target="_blank" rel="noopener" href="https://www.google.com/search?q=${encodeURIComponent(i.q+' tee times')}">⏰ Tee times</a></div>`:''}</div>${i.beer?`<div class="beerbar">🍺 ${i.beer}</div>`:''}</div>`).join('');
 });
 
 const done=ls.get('checks',{});
