@@ -46,7 +46,7 @@ footer{text-align:center;color:var(--mute);font-size:.8rem;padding:20px}
   <div class="tabs" id="tabs"></div>
 
   <section class="panel" id="p-overview">
-    <div class="card warn"><strong>Status: inquiry only.</strong> The GolfNevada request for the Wolf Creek – Mesquite package went out 11/8/2026. Nothing below is confirmed yet. Tee times are the requested ones and the lodging is unnamed. Tick things off in the Checklist tab as they lock in.</div>
+    <div class="card warn"><strong>Status: inquiry only.</strong> The GolfNevada request for the Wolf Creek – Mesquite package went out 11/8/2026. Nothing below is confirmed yet. Tee times are the requested ones and the hotel is only a maybe (Eureka Casino). Tick things off in the Checklist tab as they lock in.</div>
     <div class="card"><h3>The plan at a glance</h3>
       <table>
         <tr><th>Day</th><th>Morning</th><th>Afternoon</th></tr>
@@ -56,6 +56,10 @@ footer{text-align:center;color:var(--mute);font-size:.8rem;padding:20px}
         <tr><td>Mon 1/25</td><td>Coyote Springs 9–10</td><td>Drive home</td></tr>
       </table>
       <p class="meta">6 rounds in 4 days. Saturday and Sunday are 36-hole days.</p>
+    </div>
+    <div class="card"><h3>Lodging <span class="tag">Tentative</span></h3>
+      <p class="meta">Possibly Eureka Casino Resort, Mesquite. Not booked or confirmed. Need 2 rooms, 2 queens each, Fri to Mon.</p>
+      <div class="links"><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Eureka+Casino+Resort+Mesquite+NV">Map</a><a target="_blank" rel="noopener" href="https://www.google.com/search?q=Eureka+Casino+Resort+Mesquite+NV+rates">Rates</a></div>
     </div>
     <div class="card"><h3>Source</h3>
       <p class="meta">Package: Wolf Creek – Mesquite Golf Package on GolfNevada.com. Wolf Creek is the contact for booking and will reach out directly.</p>
@@ -87,7 +91,7 @@ const days=[
  {id:'fri',label:'Fri',date:'Jan 22',title:'Friday, Jan 22',items:[
   {t:'Morning',n:'Travel to Mesquite',d:'Arrive, drop bags, check-in may not be open yet. Plan to head straight to the course.',tag:'Travel'},
   {t:'~11:00 AM',n:'Wolf Creek Golf Club',d:'Requested tee time. The package host. Confirm group of 4 and cart.',q:'Wolf Creek Golf Course Mesquite NV'},
-  {t:'Evening',n:'Check in and dinner',d:'Hotel not chosen yet. Pick a dinner spot in town.',tag:'Open'}]},
+  {t:'Evening',n:'Check in at Eureka Casino Resort (maybe)',d:'Hotel is tentative, not booked. Dinner on site or in town.',tag:'Tentative',q:'Eureka Casino Resort Mesquite NV'}]},
  {id:'sat',label:'Sat',date:'Jan 23',title:'Saturday, Jan 23',items:[
   {t:'7:30 AM',n:'Conestoga Golf Club',d:'Early start, Mesquite. Round one of the 36.',q:'Conestoga Golf Club Mesquite NV'},
   {t:'Midday',n:'Lunch and reset',d:'Short break between rounds.',tag:'Break'},
@@ -103,7 +107,7 @@ const days=[
   {t:'9–10 AM',n:'Coyote Springs Golf Club',d:'Final round. Coyote Springs is a drive from Mesquite (roughly an hour, verify). Leave early enough for the tee time.',q:'Coyote Springs Golf Club Nevada'},
   {t:'After',n:'Drive home',d:'',tag:'Travel'}]}
 ];
-const checks=['Reply to Wolf Creek rep and confirm package price','Confirm lodging: 2 rooms, 2 queen beds each, Fri to Mon','Lock Fri Wolf Creek ~11 AM','Lock Sat Conestoga 7:30 AM','Lock Sat Oasis Palmer ~1 PM','Lock Sun Oasis Canyons 7:30 AM','Lock Sun CasaBlanca ~1 PM','Lock Mon Coyote Springs 9-10 AM','Sort cars and who is driving','Collect money from the other 3 golfers','Decide on shipping clubs or hauling them'];
+const checks=['Reply to Wolf Creek rep and confirm package price','Decide and book lodging (Eureka Casino?): 2 rooms, 2 queens each, Fri to Mon','Lock Fri Wolf Creek ~11 AM','Lock Sat Conestoga 7:30 AM','Lock Sat Oasis Palmer ~1 PM','Lock Sun Oasis Canyons 7:30 AM','Lock Sun CasaBlanca ~1 PM','Lock Mon Coyote Springs 9-10 AM','Sort cars and who is driving','Collect money from the other 3 golfers','Decide on shipping clubs or hauling them'];
 const $=s=>document.querySelector(s);
 const ls={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 
