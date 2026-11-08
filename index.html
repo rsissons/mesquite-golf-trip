@@ -3,73 +3,86 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mesquite Golf Trip 2027</title>
+<title>Mesquite Major 2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 <style>
-:root{--sky:#27b4ff;--sun:#ffd23f;--grass:#2ecc71;--deep:#0b6b3a;--coral:#ff5a5f;--grape:#7b4bff;--ink:#16324f;--card:#ffffff;--bg:#fff8e6;--mute:#5a7089}
+:root{--forest:#0b241a;--forest2:#11352a;--forest3:#0e2c21;--gold:#d8b45f;--cream:#f4efe2;--mute:#a7b6ab;--line:rgba(216,180,95,.3)}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Trebuchet MS",system-ui,Segoe UI,sans-serif}
-header{position:relative;text-align:center;color:#fff;padding:30px 0 0;background:linear-gradient(160deg,var(--sky),var(--grape) 60%,var(--coral));overflow:hidden}
-
-header>*{position:relative}
-h1{margin:0;font-size:2.4rem;line-height:1.1;text-shadow:3px 3px 0 rgba(0,0,0,.2);transform:rotate(-1.5deg)}
-.sub{margin:.5rem 0 0;font-weight:700}
-#count{display:inline-block;margin-top:14px;padding:9px 20px;background:var(--sun);color:var(--ink);border-radius:99px;font-weight:900;box-shadow:0 4px 0 #c99a00;transform:rotate(1.5deg)}
-.wave{height:26px;background:var(--bg);clip-path:ellipse(60% 100% at 50% 100%);margin-top:-1px}#toon{display:block;width:100%;max-width:820px;margin:6px auto 0}
-main{max-width:780px;margin:0 auto;padding:0 14px 60px;position:relative}
-.tabs{display:flex;gap:7px;overflow-x:auto;position:sticky;top:0;background:var(--bg);padding:10px 0;z-index:5}
-.tabs button{flex:0 0 auto;min-width:80px;padding:9px 16px;white-space:nowrap;background:#fff;color:var(--ink);border:3px solid var(--ink);border-radius:14px;font:inherit;font-weight:800;cursor:pointer;box-shadow:0 3px 0 var(--ink);transition:transform .1s}
-.tabs button:active{transform:translateY(3px);box-shadow:none}
-.tabs button.on{background:var(--coral);color:#fff}
-.tabs small{display:block;font-size:.7rem;opacity:.85;font-weight:600}
-.panel{display:none}.panel.on{display:block;animation:pop .25s}
-@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-h2{font-size:1.6rem;margin:14px 0 4px}
-.card{background:var(--card);border:3px solid var(--ink);border-radius:18px;padding:0;margin:14px 0;box-shadow:5px 5px 0 var(--ink);overflow:hidden}
-.card .body{padding:12px 16px 14px}
-.card h3{margin:2px 0 4px;font-size:1.25rem}
-.art{height:110px;position:relative;overflow:hidden}
-.art svg{width:100%;height:100%;display:block}
-.duo{display:grid;grid-template-columns:3fr 2fr;gap:3px;height:150px;border-bottom:3px solid var(--ink)}.duo div{background-size:cover;background-position:center}.photo{height:170px;background-size:cover;background-position:center}
-.time{display:inline-block;background:var(--ink);color:var(--sun);font-weight:900;padding:2px 12px;border-radius:99px;font-size:.9rem}
-.meta{color:var(--mute);font-size:.92rem}
-.tag{display:inline-block;font-size:.72rem;font-weight:800;padding:2px 9px;border-radius:99px;margin-left:6px;vertical-align:middle;color:#fff;background:var(--grape)}
-.tag.b{background:#e68a00}.tag.t{background:var(--coral)}.tag.g{background:var(--grass);color:var(--ink)}
-.links a{display:inline-block;margin:8px 8px 0 0;padding:5px 14px;background:var(--sky);color:#fff;text-decoration:none;font-weight:800;font-size:.88rem;border-radius:99px;border:2px solid var(--ink)}
-.links a.beer{background:var(--sun);color:var(--ink)}
-.beerbar{background:linear-gradient(90deg,#ffb400,#ffd23f);padding:8px 16px;font-weight:800;border-top:3px solid var(--ink)}
-label.chk{display:flex;gap:10px;align-items:flex-start;padding:7px 0;cursor:pointer}
-label.chk input{margin-top:5px;width:20px;height:20px;accent-color:var(--grass)}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--forest);color:var(--cream);font:16px/1.55 Inter,system-ui,"Segoe UI",sans-serif}
+h1,h2,h3,.brand{font-family:"Playfair Display",Georgia,"Times New Roman",serif;font-weight:600}
+.hero{position:relative;min-height:470px;display:flex;align-items:flex-end;justify-content:space-between;padding:26px 22px 34px;background:linear-gradient(90deg,rgba(7,26,19,.96) 0%,rgba(7,26,19,.78) 48%,rgba(7,26,19,.12) 100%),linear-gradient(0deg,rgba(7,26,19,.9),rgba(7,26,19,0) 45%),url(img/courses/casablanca3_s.jpg) 70% center/cover}
+.hero-in{max-width:560px}
+.brand{font-size:1.6rem;line-height:1.1;color:var(--cream);margin-bottom:26px}
+.brand span{display:block;font:600 .62rem/1 Inter,sans-serif;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-top:8px;padding-top:8px;border-top:1px solid var(--gold);width:max-content}
+h1{margin:0;font-size:clamp(2.3rem,8vw,3.8rem);line-height:1.05;letter-spacing:-.5px}
+h1 em{color:var(--gold);font-style:normal}
+.lede{margin:16px 0 20px;color:#d7e0d8;max-width:460px}
+#count{display:inline-block;padding:9px 20px;border:1px solid var(--gold);color:var(--gold);font-size:.8rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+.kicker{align-self:flex-start;font:600 .62rem/1.9 Inter,sans-serif;letter-spacing:.3em;color:#f1d98a;text-shadow:0 1px 6px rgba(0,0,0,.85);text-align:right;display:none}
+@media(min-width:700px){.kicker{display:block}}
+main{max-width:820px;margin:0 auto;padding:0 16px 60px}
+.tabs{display:flex;gap:2px;overflow-x:auto;position:sticky;top:0;background:var(--forest);padding:6px 0 0;z-index:5;border-bottom:1px solid var(--line);scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:0 0 auto;min-width:78px;padding:12px 14px 10px;background:none;color:var(--mute);border:0;border-bottom:3px solid transparent;font:700 .72rem/1.2 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;white-space:nowrap}
+.tabs button small{display:block;margin-top:3px;font:500 .68rem/1 Inter,sans-serif;letter-spacing:.04em;text-transform:none;opacity:.85}
+.tabs button.on{color:var(--gold);border-bottom-color:var(--gold)}
+.panel{display:none}.panel.on{display:block;animation:fade .3s}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+h2{font-size:1.9rem;margin:26px 0 4px}
+.card{background:var(--forest2);border:1px solid var(--line);border-radius:4px;margin:16px 0;overflow:hidden}
+.card .body{padding:16px 20px 18px}
+.card h3{margin:4px 0 6px;font-size:1.3rem;color:var(--cream)}
+.photo{height:190px;background-size:cover;background-position:center}
+.duo{display:grid;grid-template-columns:3fr 2fr;gap:2px;height:170px}
+.duo div{background-size:cover;background-position:center}
+.time{display:inline-block;color:var(--gold);font:700 .74rem/1 Inter,sans-serif;letter-spacing:.2em;text-transform:uppercase}
+.meta{color:var(--mute);font-size:.93rem}
+.tag{display:inline-block;font:700 .62rem/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;padding:4px 8px;margin-left:10px;vertical-align:middle;color:var(--gold);border:1px solid var(--gold)}
+a{color:var(--gold)}
+.links a{display:inline-block;margin:10px 10px 0 0;padding:8px 16px;color:var(--gold);text-decoration:none;font:700 .7rem/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--gold);transition:.15s}
+.links a:hover{background:var(--gold);color:var(--forest)}
+.beerbar{padding:11px 20px;border-top:1px solid var(--line);background:var(--forest3);font-size:.9rem;color:#d7e0d8}
+.beerbar b{color:var(--gold);font:700 .66rem/1 Inter,sans-serif;letter-spacing:.2em;text-transform:uppercase;margin-right:10px}
+label.chk{display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-bottom:1px solid rgba(216,180,95,.12);cursor:pointer}
+label.chk input{margin-top:5px;width:18px;height:18px;accent-color:var(--gold)}
 label.chk input:checked+span{text-decoration:line-through;color:var(--mute)}
-textarea{width:100%;min-height:90px;background:#f3fbff;color:var(--ink);border:3px solid var(--ink);border-radius:12px;padding:10px;font:inherit}
+textarea{width:100%;min-height:100px;background:var(--forest3);color:var(--cream);border:1px solid var(--line);border-radius:3px;padding:12px;font:inherit}
 table{width:100%;border-collapse:collapse}
-td,th{padding:7px 4px;border-bottom:2px dashed #cfe3f2;text-align:left}
-input.score{width:52px;background:#f3fbff;color:var(--ink);border:2px solid var(--ink);border-radius:8px;padding:5px;text-align:center;font:inherit;font-weight:700}
-input.name{width:84px}
-.warn{background:#fff3c4}
-.beer-row{display:flex;align-items:center;gap:6px;padding:6px 0;flex-wrap:wrap}
-.beer-row b{min-width:84px}
-.beer-row button{width:34px;height:34px;border-radius:50%;border:3px solid var(--ink);background:var(--sun);font-weight:900;font-size:1.1rem;cursor:pointer;box-shadow:0 3px 0 var(--ink)}
-.beer-row button:active{transform:translateY(3px);box-shadow:none}
-.mugs{flex:1;min-width:120px;font-size:1.2rem;word-break:break-all}
-.big{font-size:2rem;text-align:center;font-weight:900}
-.pop{animation:bounce .4s}@keyframes bounce{40%{transform:scale(1.25) rotate(-6deg)}}
-footer{text-align:center;color:var(--mute);font-size:.78rem;padding:10px 16px 30px}
+td,th{padding:10px 4px;border-bottom:1px solid rgba(216,180,95,.14);text-align:left}
+th{color:var(--gold);font:700 .68rem/1 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase}
+input.score{width:52px;background:var(--forest3);color:var(--cream);border:1px solid var(--line);border-radius:3px;padding:6px;text-align:center;font:inherit}
+input.name{width:88px}
+.warn{border-color:var(--gold);background:rgba(216,180,95,.08)}
+.beer-row{display:flex;align-items:center;gap:8px;padding:8px 0;flex-wrap:wrap;border-bottom:1px solid rgba(216,180,95,.12)}
+.beer-row b{min-width:86px}
+.beer-row button{width:34px;height:34px;border-radius:50%;border:1px solid var(--gold);background:none;color:var(--gold);font-weight:700;font-size:1.1rem;cursor:pointer}
+.beer-row button:hover{background:var(--gold);color:var(--forest)}
+.mugs{flex:1;min-width:120px;font-size:1.05rem;word-break:break-all}
+.big{font:600 2rem/1.2 "Playfair Display",Georgia,serif;text-align:center;color:var(--gold);padding-top:14px}
+.pop{animation:bounce .4s}@keyframes bounce{40%{transform:scale(1.12)}}
+.toonwrap{background:linear-gradient(#27b4ff,#cfeeff);padding:6px 6px 0}
+#toon{display:block;width:100%;max-width:820px;margin:0 auto}
+footer{text-align:center;color:var(--mute);font-size:.76rem;padding:10px 20px 34px;border-top:1px solid var(--line);max-width:820px;margin:0 auto}
 </style>
 </head>
 <body>
-<header>
-  <h1>⛳ Mesquite Golf Trip 🍺</h1>
-  <p class="sub">Jan 22 – 25, 2027 · 4 golfers · 6 rounds · 3 nights</p>
-  <div id="count"></div>
-  <svg id="toon" viewBox="0 -44 800 344" role="img" aria-label="Cartoon of four golfers in two golf carts"></svg>
-  <div class="wave"></div>
+<header class="hero">
+  <div class="hero-in">
+    <div class="brand">Mesquite Major<span>Nevada &middot; January 2027</span></div>
+    <h1>Four friends.<br>Six rounds.<br>One <em>Major.</em></h1>
+    <p class="lede">Mesquite, Nevada, Jan 22 &ndash; 25. Tee times, itinerary, beer count and scorecard in one place.</p>
+    <div id="count"></div>
+  </div>
+  <div class="kicker">GOOD GOLF<br>BETTER COMPANY<br>GREAT WEEKENDS</div>
 </header>
 <main>
   <div class="tabs" id="tabs"></div>
 
   <section class="panel" id="p-overview">
-    <div class="card warn"><div class="body"><strong>🚧 Status: inquiry only.</strong> The GolfNevada request for the Wolf Creek – Mesquite package went out 11/8/2026. Nothing below is confirmed yet. Tee times are the requested ones and the hotel is only a maybe (Eureka Casino). Tick things off in the Checklist tab as they lock in.</div></div>
-    <div class="card"><div class="photo" style="background-image:url(img/town.jpg)"></div><div class="body"><h3>🌵 Mesquite, Nevada</h3><div class="meta">Snow on the peaks, palm trees on the street, six rounds on the schedule.</div></div></div>
+    <div class="card warn"><div class="body"><strong>Status: inquiry only.</strong> The GolfNevada request for the Wolf Creek – Mesquite package went out 11/8/2026. Nothing below is confirmed yet. Tee times are the requested ones and the hotel is only a maybe (Eureka Casino). Tick things off in the Checklist tab as they lock in.</div></div>
+    <div class="card"><div class="photo" style="background-image:url(img/town.jpg)"></div><div class="body"><h3>Mesquite, Nevada</h3><div class="meta">Snow on the peaks, palm trees on the street, six rounds on the schedule.</div></div></div>
+    <div class="card"><div class="toonwrap"><svg id="toon" viewBox="0 -44 800 344" role="img" aria-label="Cartoon of four golfers in two golf carts"></svg></div><div class="body"><h3>The Crew</h3><div class="meta">Four golfers, two carts, zero chance of staying in the fairway.</div></div></div>
     <div class="card"><div class="body"><h3>The plan at a glance</h3>
       <table>
         <tr><th>Day</th><th>Morning</th><th>Afternoon</th></tr>
@@ -80,11 +93,11 @@ footer{text-align:center;color:var(--mute);font-size:.78rem;padding:10px 16px 30
       </table>
       <p class="meta">Saturday and Sunday are 36-hole days. Hydrate. With water. Between the beers.</p>
     </div></div>
-    <div class="card"><div class="body"><h3>🏨 Lodging <span class="tag t">Tentative</span></h3>
+    <div class="card"><div class="body"><h3>Lodging <span class="tag t">Tentative</span></h3>
       <p class="meta">Possibly Eureka Casino Resort, Mesquite. Not booked or confirmed. Need 2 rooms, 2 queens each, Fri to Mon.</p>
       <div class="links"><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Eureka+Casino+Resort+Mesquite+NV">Map</a><a target="_blank" rel="noopener" href="https://www.google.com/search?q=Eureka+Casino+Resort+Mesquite+NV+rates">Rates</a></div>
     </div></div>
-    <div class="card"><div class="body"><h3>📨 Source</h3>
+    <div class="card"><div class="body"><h3>Source</h3>
       <p class="meta">Package: Wolf Creek – Mesquite Golf Package on GolfNevada.com. Wolf Creek is the contact for booking and will reach out directly.</p>
       <div class="links"><a href="https://www.golfnevada.com/stayandplay/28227" target="_blank" rel="noopener">View package</a></div>
     </div></div>
@@ -96,12 +109,12 @@ footer{text-align:center;color:var(--mute);font-size:.78rem;padding:10px 16px 30
   <section class="panel" id="p-mon"></section>
 
   <section class="panel" id="p-beer">
-    <div class="card"><div class="body"><h3>🍺 Beer Tab</h3>
+    <div class="card"><div class="body"><h3>Beer Tab</h3>
       <p class="meta">Tap + for every cold one. Drink responsibly, designate a driver, and don't be the guy driving the cart sideways.</p>
       <div id="beers"></div>
       <div class="big" id="beertotal"></div>
     </div></div>
-    <div class="card"><div class="body"><h3>🍻 Where to find a cold one</h3>
+    <div class="card"><div class="body"><h3>Where to find a cold one</h3>
       <p class="meta">Beer cart on the course, the bar at each clubhouse, and the casino floors. Searches below open in Maps.</p>
       <div class="links">
         <a class="beer" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=craft+beer+Mesquite+NV">Craft beer</a>
@@ -110,18 +123,18 @@ footer{text-align:center;color:var(--mute);font-size:.78rem;padding:10px 16px 30
         <a class="beer" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=liquor+store+Mesquite+NV">Stock the room</a>
       </div>
     </div></div>
-    <div class="card"><div class="body"><h3>🎲 Beer rules (optional)</h3>
-      <p>🏌️ Birdie: everyone else drinks.<br>🌊 Water ball: you buy the next round.<br>🥶 Last place after 18 buys dinner beers.<br>🍺 Eagle: free beer, no argument.</p>
+    <div class="card"><div class="body"><h3>Beer rules (optional)</h3>
+      <p>Birdie: everyone else drinks.<br>Water ball: you buy the next round.<br>Last place after 18 buys dinner beers.<br>Eagle: free beer, no argument.</p>
     </div></div>
   </section>
 
   <section class="panel" id="p-check">
-    <div class="card"><div class="body"><h3>✅ Booking checklist</h3><div id="checks"></div></div></div>
-    <div class="card"><div class="body"><h3>📝 Notes</h3><textarea id="notes" placeholder="Rental cars, who's driving, confirmation numbers, dinner spots..."></textarea></div></div>
+    <div class="card"><div class="body"><h3>Booking checklist</h3><div id="checks"></div></div></div>
+    <div class="card"><div class="body"><h3>Notes</h3><textarea id="notes" placeholder="Rental cars, who's driving, confirmation numbers, dinner spots..."></textarea></div></div>
   </section>
 
   <section class="panel" id="p-score">
-    <div class="card"><div class="body"><h3>🏆 Scorecard</h3>
+    <div class="card"><div class="body"><h3>Scorecard</h3>
       <p class="meta">Total strokes per round. Saved on this device only.</p>
       <div id="score"></div>
     </div></div>
@@ -137,6 +150,7 @@ function scene(a,b,c,flag){ // illustrated course banner
  <path d="M0 70 Q80 50 160 68 T320 60 T400 66 V110 H0Z" fill="${c}"/><path d="M0 88 Q120 70 220 86 T400 80 V110 H0Z" fill="#26b35b"/>
  <ellipse cx="290" cy="90" rx="26" ry="6" fill="#1f9a4c"/><rect x="289" y="52" width="2.5" height="38" fill="#fff"/><path d="M291 52 l22 8 -22 8z" fill="#ff5a5f"/><circle cx="260" cy="94" r="4" fill="#fff"/></svg>`;
 }
+const strip=x=>x.replace(/\p{Extended_Pictographic}\uFE0F?\s*/gu,'');
 const days=[
  {id:'fri',label:'Fri',date:'Jan 22',title:'Friday, Jan 22',items:[
   {t:'Morning',n:'🚗 Travel to Mesquite',d:'Arrive, drop bags, check-in may not be open yet. Plan to head straight to the course.',tag:'Travel',cls:'b'},
@@ -161,13 +175,13 @@ const checks=['Reply to Wolf Creek rep and confirm package price','Decide and bo
 const $=s=>document.querySelector(s);
 const ls={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 
-const tabs=[['overview','Overview','🏌️'],...days.map(d=>[d.id,d.label,d.date]),['beer','Beer','🍺'],['check','Checklist','✅'],['score','Scores','🏆']];
+const tabs=[['overview','Overview','Trip'],...days.map(d=>[d.id,d.label,d.date]),['beer','Beer','Cold ones'],['check','Checklist','To do'],['score','Scores','Card']];
 $('#tabs').innerHTML=tabs.map(t=>`<button data-t="${t[0]}">${t[1]}<small>${t[2]}</small></button>`).join('');
 function show(id){document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id==='p-'+id));document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('on',b.dataset.t===id));ls.set('tab',id);window.scrollTo(0,0)}
 $('#tabs').onclick=e=>{const b=e.target.closest('button');if(b)show(b.dataset.t)};
 
 days.forEach(d=>{
- $('#p-'+d.id).innerHTML=`<h2>${d.title}</h2>`+d.items.map(i=>`<div class="card">${i.photos?`<div class="duo">${i.photos.map(x=>`<div style="background-image:url(img/courses/${x}_s.jpg)"></div>`).join('')}</div>`:''}<div class="body"><span class="time">${i.t}</span>${i.tag?`<span class="tag ${i.cls||''}">${i.tag}</span>`:''}<h3>${i.n}</h3>${i.d?`<div class="meta">${i.d}</div>`:''}${i.q?`<div class="links"><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(i.q)}">📍 Map</a><a target="_blank" rel="noopener" href="https://www.google.com/search?q=${encodeURIComponent(i.q+' tee times')}">⏰ Tee times</a></div>`:''}</div>${i.beer?`<div class="beerbar">🍺 ${i.beer}</div>`:''}</div>`).join('');
+ $('#p-'+d.id).innerHTML=`<h2>${d.title}</h2>`+d.items.map(i=>`<div class="card">${i.photos?`<div class="duo">${i.photos.map(x=>`<div style="background-image:url(img/courses/${x}_s.jpg)"></div>`).join('')}</div>`:''}<div class="body"><span class="time">${i.t}</span>${i.tag?`<span class="tag ${i.cls||''}">${i.tag}</span>`:''}<h3>${strip(i.n)}</h3>${i.d?`<div class="meta">${i.d}</div>`:''}${i.q?`<div class="links"><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(i.q)}">Map</a><a target="_blank" rel="noopener" href="https://www.google.com/search?q=${encodeURIComponent(i.q+' tee times')}">Tee times</a></div>`:''}</div>${i.beer?`<div class="beerbar"><b>19th hole</b>${i.beer}</div>`:''}</div>`).join('');
 });
 
 const done=ls.get('checks',{});
@@ -191,7 +205,7 @@ const beers=ls.get('beers',{});
 function drawBeer(){
  let all=0;
  $('#beers').innerHTML=names.map((n,p)=>{const c=+beers[p]||0;all+=c;return `<div class="beer-row"><b>${n}</b><button data-b="${p}" data-d="-1">−</button><button data-b="${p}" data-d="1">+</button><span class="mugs">${'🍺'.repeat(Math.min(c,30))||'<span class="meta">dry so far</span>'}</span><b>${c}</b></div>`}).join('');
- $('#beertotal').innerHTML=all?`🍻 ${all} beers and counting`:'🍻 Nothing poured yet';
+ $('#beertotal').innerHTML=all?`${all} beers and counting`:'Nothing poured yet';
 }
 $('#beers').onclick=e=>{const b=e.target.closest('button');if(!b)return;const p=b.dataset.b;beers[p]=Math.max(0,(+beers[p]||0)+(+b.dataset.d));ls.set('beers',beers);drawBeer();if(b.dataset.d==='1'){const t=$('#beertotal');t.classList.remove('pop');void t.offsetWidth;t.classList.add('pop')}};
 drawBeer();
@@ -254,7 +268,7 @@ function drawToon(){
 drawToon();
 const start=new Date(2027,0,22),end=new Date(2027,0,26),now=new Date();
 const dd=Math.ceil((start-now)/864e5);
-$('#count').textContent=now<start?`⏳ ${dd} days until tee-off`:now<end?'🔥 Trip is on. Fairways!':'🏁 Trip complete';
+$('#count').textContent=now<start?`${dd} days until tee-off`:now<end?'The trip is on':'Trip complete';
 show(ls.get('tab','overview'));
 </script>
 </body>
