@@ -22,7 +22,7 @@ h1 em{color:var(--gold);font-style:normal}
 .kicker{align-self:flex-start;font:600 .62rem/1.9 Inter,sans-serif;letter-spacing:.3em;color:#f1d98a;text-shadow:0 1px 6px rgba(0,0,0,.85);text-align:right;display:none}
 @media(min-width:700px){.kicker{display:block}}
 main{max-width:820px;margin:0 auto;padding:0 16px 60px}
-.tabs{display:flex;gap:2px;overflow-x:auto;position:sticky;top:0;background:var(--forest);padding:6px 0 0;z-index:5;border-bottom:1px solid var(--line);scrollbar-width:none}
+.tabwrap{position:sticky;top:0;z-index:5;background:var(--forest);border-bottom:1px solid var(--line)}.tabs{display:flex;gap:2px;overflow-x:auto;padding:6px 0 0;scrollbar-width:none;scroll-behavior:smooth}.tabwrap:before,.tabwrap:after{content:"";position:absolute;top:0;bottom:0;width:56px;pointer-events:none;z-index:1;opacity:0;transition:opacity .2s}.tabwrap:before{left:0;background:linear-gradient(90deg,var(--forest) 25%,rgba(11,36,26,0))}.tabwrap:after{right:0;background:linear-gradient(270deg,var(--forest) 25%,rgba(11,36,26,0))}.tabwrap.canL:before,.tabwrap.canR:after{opacity:1}.arr{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:30px;height:30px;border-radius:50%;border:1px solid var(--gold);background:var(--forest);color:var(--gold);font:700 1.3rem/1 Inter,sans-serif;padding:0 0 3px;cursor:pointer;display:none}.arr.l{left:2px}.arr.r{right:2px;animation:nudge 1.4s ease-in-out 3}.tabwrap.canL .arr.l,.tabwrap.canR .arr.r{display:block}@keyframes nudge{0%,100%{transform:translate(0,-50%)}50%{transform:translate(4px,-50%)}}
 .tabs::-webkit-scrollbar{display:none}
 .tabs button{flex:0 0 auto;min-width:78px;padding:12px 14px 10px;background:none;color:var(--mute);border:0;border-bottom:3px solid transparent;font:700 .72rem/1.2 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;white-space:nowrap}
 .tabs button small{display:block;margin-top:3px;font:500 .68rem/1 Inter,sans-serif;letter-spacing:.04em;text-transform:none;opacity:.85}
@@ -76,7 +76,7 @@ footer{text-align:center;color:var(--mute);font-size:.76rem;padding:10px 20px 34
   <div class="kicker">GOOD GOLF<br>BETTER COMPANY<br>GREAT WEEKENDS</div>
 </header>
 <main>
-  <div class="tabs" id="tabs"></div>
+  <div class="tabwrap" id="tabwrap"><button class="arr l" id="arrL" aria-label="Scroll tabs left">&#8249;</button><div class="tabs" id="tabs"></div><button class="arr r" id="arrR" aria-label="Scroll tabs right">&#8250;</button></div>
 
   <section class="panel" id="p-overview">
     <div class="card warn"><div class="body"><strong>Status: inquiry only.</strong> The GolfNevada request for the Wolf Creek – Mesquite package went out 11/8/2026. Nothing below is confirmed yet. Tee times are the requested ones and the hotel is only a maybe (Eureka Casino). Tick things off in the Checklist tab as they lock in.</div></div>
@@ -176,7 +176,10 @@ const ls={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.par
 
 const tabs=[['overview','Overview','Trip'],...days.map(d=>[d.id,d.label,d.date]),['beer','Beer','Cold ones'],['check','Checklist','To do'],['score','Scores','Card']];
 $('#tabs').innerHTML=tabs.map(t=>`<button data-t="${t[0]}">${t[1]}<small>${t[2]}</small></button>`).join('');
-function show(id){document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id==='p-'+id));document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('on',b.dataset.t===id));ls.set('tab',id);window.scrollTo(0,0)}
+function show(id){document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id==='p-'+id));document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('on',b.dataset.t===id));ls.set('tab',id);window.scrollTo(0,0);const on=document.querySelector('.tabs button.on');if(on&&on.scrollIntoView)on.scrollIntoView({inline:'center',block:'nearest'});tabState()}
+function tabState(){const t=$('#tabs'),w=$('#tabwrap');w.classList.toggle('canL',t.scrollLeft>8);w.classList.toggle('canR',t.scrollLeft+t.clientWidth<t.scrollWidth-8)}
+$('#tabs').addEventListener('scroll',tabState);window.addEventListener('resize',tabState);
+$('#arrL').onclick=()=>$('#tabs').scrollBy({left:-200});$('#arrR').onclick=()=>$('#tabs').scrollBy({left:200});
 $('#tabs').onclick=e=>{const b=e.target.closest('button');if(b)show(b.dataset.t)};
 
 days.forEach(d=>{
@@ -213,7 +216,7 @@ drawBeer();
 const start=new Date(2027,0,22),end=new Date(2027,0,26),now=new Date();
 const dd=Math.ceil((start-now)/864e5);
 $('#count').textContent=now<start?`${dd} days until tee-off`:now<end?'The trip is on':'Trip complete';
-show(ls.get('tab','overview'));
+show(ls.get('tab','overview'));tabState();setTimeout(tabState,300);
 </script>
 </body>
 </html>
