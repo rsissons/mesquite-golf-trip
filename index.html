@@ -70,7 +70,7 @@ footer{text-align:center;color:var(--mute);font-size:.76rem;padding:10px 20px 34
 <header class="hero">
   <div class="hero-in">
     <div class="brand">Mesquite Major<span>Nevada &middot; January 2027</span></div>
-    <h1>Four friends.<br>Six rounds.<br>One <em>Major.</em></h1>
+    <h1>Brian. Ron. Ed. Bob.<br>Six rounds.<br>One <em>Major.</em></h1>
     <p class="lede">Mesquite, Nevada, Jan 22 &ndash; 25. Tee times, itinerary, beer count and scorecard in one place.</p>
     <div id="count"></div>
   </div>
@@ -82,7 +82,7 @@ footer{text-align:center;color:var(--mute);font-size:.76rem;padding:10px 20px 34
   <section class="panel" id="p-overview">
     <div class="card warn"><div class="body"><strong>Status: inquiry only.</strong> The GolfNevada request for the Wolf Creek – Mesquite package went out 11/8/2026. Nothing below is confirmed yet. Tee times are the requested ones and the hotel is only a maybe (Eureka Casino). Tick things off in the Checklist tab as they lock in.</div></div>
     <div class="card"><div class="photo" style="background-image:url(img/town.jpg)"></div><div class="body"><h3>Mesquite, Nevada</h3><div class="meta">Snow on the peaks, palm trees on the street, six rounds on the schedule.</div></div></div>
-    <div class="card"><div class="toonwrap"><svg id="toon" viewBox="0 -44 800 344" role="img" aria-label="Cartoon of four golfers in two golf carts"></svg></div><div class="body"><h3>The Crew</h3><div class="meta">Four golfers, two carts, zero chance of staying in the fairway.</div></div></div>
+    <div class="card"><div class="toonwrap"><svg id="toon" viewBox="0 -44 800 344" role="img" aria-label="Cartoon of four golfers in two golf carts"></svg></div><div class="body"><h3>The Crew</h3><div class="meta">Brian, Ron, Ed and Bob. Two carts, zero chance of staying in the fairway.</div></div></div>
     <div class="card"><div class="body"><h3>The plan at a glance</h3>
       <table>
         <tr><th>Day</th><th>Morning</th><th>Afternoon</th></tr>
@@ -189,7 +189,7 @@ $('#checks').innerHTML=checks.map((c,i)=>`<label class="chk"><input type="checkb
 $('#checks').onchange=e=>{done[e.target.dataset.i]=e.target.checked;ls.set('checks',done)};
 $('#notes').value=ls.get('notes','');$('#notes').oninput=e=>ls.set('notes',e.target.value);
 
-const players=['Ron','Golfer 2','Golfer 3','Golfer 4'];
+const players=['Ron','Brian','Ed','Bob'];
 const rounds=['Wolf Creek','Conestoga','Oasis Palmer','Oasis Canyons','CasaBlanca','Coyote Springs'];
 const sc=ls.get('scores',{});const names=ls.get('names',players);
 function drawScore(){
