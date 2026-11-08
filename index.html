@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mesquite Golf Trip 2027</title>
+<style>
+:root{--bg:#0f1f17;--card:#173024;--ink:#f1efe6;--mute:#a9b8ac;--acc:#e8c45a;--line:#2a4a39;--ok:#6fcf8f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,Segoe UI,Roboto,sans-serif}
+header{padding:28px 16px 16px;text-align:center;background:linear-gradient(#1c3d2b,var(--bg))}
+h1{margin:0;font-size:1.9rem;letter-spacing:.5px}
+.sub{color:var(--mute);margin:.3rem 0 0}
+#count{display:inline-block;margin-top:14px;padding:8px 16px;border:1px solid var(--acc);border-radius:99px;color:var(--acc);font-weight:600}
+main{max-width:760px;margin:0 auto;padding:0 16px 60px}
+.tabs{display:flex;gap:6px;overflow-x:auto;position:sticky;top:0;background:var(--bg);padding:10px 0;z-index:5}
+.tabs button{flex:1;min-width:76px;padding:10px 6px;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:10px;font:inherit;cursor:pointer}
+.tabs button.on{background:var(--acc);color:#1a1a1a;font-weight:700;border-color:var(--acc)}
+.tabs small{display:block;font-size:.72rem;opacity:.8}
+.panel{display:none}.panel.on{display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+.card h3{margin:0 0 4px}
+.time{color:var(--acc);font-weight:700}
+.meta{color:var(--mute);font-size:.9rem}
+.tag{display:inline-block;font-size:.72rem;padding:2px 8px;border-radius:99px;background:#3a3216;color:var(--acc);margin-left:6px;vertical-align:middle}
+a{color:var(--acc)}
+.links a{display:inline-block;margin:6px 12px 0 0;font-size:.9rem}
+label.chk{display:flex;gap:10px;align-items:flex-start;padding:6px 0;cursor:pointer}
+label.chk input{margin-top:5px;width:18px;height:18px;accent-color:var(--ok)}
+label.chk input:checked+span{text-decoration:line-through;color:var(--mute)}
+textarea{width:100%;min-height:90px;background:#0f1f17;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:10px;font:inherit}
+table{width:100%;border-collapse:collapse}
+td,th{padding:8px 4px;border-bottom:1px solid var(--line);text-align:left}
+input.score{width:46px;background:#0f1f17;color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:5px;text-align:center}
+.warn{border-color:#8a6d1c;background:#2a2412}
+footer{text-align:center;color:var(--mute);font-size:.8rem;padding:20px}
+</style>
+</head>
+<body>
+<header>
+  <h1>⛳ Mesquite Golf Trip</h1>
+  <p class="sub">Jan 22 – 25, 2027 · 4 golfers · 2 rooms (2 queens each) · 3 nights</p>
+  <div id="count"></div>
+</header>
+<main>
+  <div class="tabs" id="tabs"></div>
+
+  <section class="panel" id="p-overview">
+    <div class="card warn"><strong>Status: inquiry only.</strong> The GolfNevada request for the Wolf Creek – Mesquite package went out 11/8/2026. Nothing below is confirmed yet. Tee times are the requested ones and the lodging is unnamed. Tick things off in the Checklist tab as they lock in.</div>
+    <div class="card"><h3>The plan at a glance</h3>
+      <table>
+        <tr><th>Day</th><th>Morning</th><th>Afternoon</th></tr>
+        <tr><td>Fri 1/22</td><td>Travel</td><td>Wolf Creek ~11 AM</td></tr>
+        <tr><td>Sat 1/23</td><td>Conestoga 7:30</td><td>Oasis Palmer ~1 PM</td></tr>
+        <tr><td>Sun 1/24</td><td>Oasis Canyons 7:30</td><td>CasaBlanca ~1 PM</td></tr>
+        <tr><td>Mon 1/25</td><td>Coyote Springs 9–10</td><td>Drive home</td></tr>
+      </table>
+      <p class="meta">6 rounds in 4 days. Saturday and Sunday are 36-hole days.</p>
+    </div>
+    <div class="card"><h3>Source</h3>
+      <p class="meta">Package: Wolf Creek – Mesquite Golf Package on GolfNevada.com. Wolf Creek is the contact for booking and will reach out directly.</p>
+      <div class="links"><a href="https://www.golfnevada.com/stayandplay/28227" target="_blank" rel="noopener">View package</a></div>
+    </div>
+  </section>
+
+  <section class="panel" id="p-fri"></section>
+  <section class="panel" id="p-sat"></section>
+  <section class="panel" id="p-sun"></section>
+  <section class="panel" id="p-mon"></section>
+
+  <section class="panel" id="p-check">
+    <div class="card"><h3>Booking checklist</h3><div id="checks"></div></div>
+    <div class="card"><h3>Notes</h3><textarea id="notes" placeholder="Rental cars, who's driving, confirmation numbers, dinner spots..."></textarea></div>
+  </section>
+
+  <section class="panel" id="p-score">
+    <div class="card"><h3>Scorecard</h3>
+      <p class="meta">Total strokes per round. Saved on this device only.</p>
+      <div id="score"></div>
+    </div>
+  </section>
+</main>
+<footer>Saved on this device only. Courses and times are requests, not confirmations.</footer>
+
+<script>
+const days=[
+ {id:'fri',label:'Fri',date:'Jan 22',title:'Friday, Jan 22',items:[
+  {t:'Morning',n:'Travel to Mesquite',d:'Arrive, drop bags, check-in may not be open yet. Plan to head straight to the course.',tag:'Travel'},
+  {t:'~11:00 AM',n:'Wolf Creek Golf Club',d:'Requested tee time. The package host. Confirm group of 4 and cart.',q:'Wolf Creek Golf Course Mesquite NV'},
+  {t:'Evening',n:'Check in and dinner',d:'Hotel not chosen yet. Pick a dinner spot in town.',tag:'Open'}]},
+ {id:'sat',label:'Sat',date:'Jan 23',title:'Saturday, Jan 23',items:[
+  {t:'7:30 AM',n:'Conestoga Golf Club',d:'Early start, Mesquite. Round one of the 36.',q:'Conestoga Golf Club Mesquite NV'},
+  {t:'Midday',n:'Lunch and reset',d:'Short break between rounds.',tag:'Break'},
+  {t:'~1:00 PM',n:'Oasis Golf Club – Palmer',d:'Arnold Palmer designed course at the Oasis.',q:'Oasis Golf Club Palmer Course Mesquite NV'},
+  {t:'Evening',n:'Dinner',d:'Open.',tag:'Open'}]},
+ {id:'sun',label:'Sun',date:'Jan 24',title:'Sunday, Jan 24',items:[
+  {t:'7:30 AM',n:'Oasis Golf Club – Canyons',d:'Second Oasis layout.',q:'Oasis Golf Club Canyons Course Mesquite NV'},
+  {t:'Midday',n:'Lunch and reset',d:'Short break between rounds.',tag:'Break'},
+  {t:'~1:00 PM',n:'CasaBlanca Golf Club',d:'Afternoon round, Mesquite.',q:'CasaBlanca Golf Club Mesquite NV'},
+  {t:'Evening',n:'Last night dinner',d:'Open.',tag:'Open'}]},
+ {id:'mon',label:'Mon',date:'Jan 25',title:'Monday, Jan 25',items:[
+  {t:'Morning',n:'Check out',d:'Check out of both rooms before heading to the course.',tag:'Hotel'},
+  {t:'9–10 AM',n:'Coyote Springs Golf Club',d:'Final round. Coyote Springs is a drive from Mesquite (roughly an hour, verify). Leave early enough for the tee time.',q:'Coyote Springs Golf Club Nevada'},
+  {t:'After',n:'Drive home',d:'',tag:'Travel'}]}
+];
+const checks=['Reply to Wolf Creek rep and confirm package price','Confirm lodging: 2 rooms, 2 queen beds each, Fri to Mon','Lock Fri Wolf Creek ~11 AM','Lock Sat Conestoga 7:30 AM','Lock Sat Oasis Palmer ~1 PM','Lock Sun Oasis Canyons 7:30 AM','Lock Sun CasaBlanca ~1 PM','Lock Mon Coyote Springs 9-10 AM','Sort cars and who is driving','Collect money from the other 3 golfers','Decide on shipping clubs or hauling them'];
+const $=s=>document.querySelector(s);
+const ls={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+
+const tabs=[['overview','Overview',''],...days.map(d=>[d.id,d.label,d.date]),['check','Checklist',''],['score','Scores','']];
+$('#tabs').innerHTML=tabs.map(t=>`<button data-t="${t[0]}">${t[1]}<small>${t[2]||'&nbsp;'}</small></button>`).join('');
+function show(id){document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id==='p-'+id));document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('on',b.dataset.t===id));ls.set('tab',id);window.scrollTo(0,0)}
+$('#tabs').onclick=e=>{const b=e.target.closest('button');if(b)show(b.dataset.t)};
+
+days.forEach(d=>{
+ $('#p-'+d.id).innerHTML=`<h2>${d.title}</h2>`+d.items.map(i=>`<div class="card"><div class="time">${i.t}${i.tag?`<span class="tag">${i.tag}</span>`:''}</div><h3>${i.n}</h3>${i.d?`<div class="meta">${i.d}</div>`:''}${i.q?`<div class="links"><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(i.q)}">Map</a><a target="_blank" rel="noopener" href="https://www.google.com/search?q=${encodeURIComponent(i.q+' tee times')}">Tee times</a></div>`:''}</div>`).join('');
+});
+
+const done=ls.get('checks',{});
+$('#checks').innerHTML=checks.map((c,i)=>`<label class="chk"><input type="checkbox" data-i="${i}" ${done[i]?'checked':''}><span>${c}</span></label>`).join('');
+$('#checks').onchange=e=>{done[e.target.dataset.i]=e.target.checked;ls.set('checks',done)};
+$('#notes').value=ls.get('notes','');$('#notes').oninput=e=>ls.set('notes',e.target.value);
+
+const players=['Ron','Golfer 2','Golfer 3','Golfer 4'];
+const rounds=['Wolf Creek','Conestoga','Oasis Palmer','Oasis Canyons','CasaBlanca','Coyote Springs'];
+const sc=ls.get('scores',{});const names=ls.get('names',players);
+function drawScore(){
+ const tot=names.map((_,p)=>rounds.reduce((s,_r,r)=>s+(+sc[p+'-'+r]||0),0));
+ $('#score').innerHTML=`<div style="overflow-x:auto"><table><tr><th>Round</th>${names.map((n,p)=>`<th><input class="score" style="width:80px" data-n="${p}" value="${n}"></th>`).join('')}</tr>`+
+ rounds.map((r,ri)=>`<tr><td>${r}</td>${names.map((_,p)=>`<td><input class="score" inputmode="numeric" data-s="${p}-${ri}" value="${sc[p+'-'+ri]||''}"></td>`).join('')}</tr>`).join('')+
+ `<tr><th>Total</th>${tot.map(t=>`<th>${t||'-'}</th>`).join('')}</tr></table></div>`;
+}
+drawScore();
+$('#score').onchange=e=>{const t=e.target;if(t.dataset.n!=null){names[t.dataset.n]=t.value;ls.set('names',names)}else if(t.dataset.s){sc[t.dataset.s]=t.value;ls.set('scores',sc)}drawScore()};
+
+const start=new Date(2027,0,22),end=new Date(2027,0,26),now=new Date();
+const dd=Math.ceil((start-now)/864e5);
+$('#count').textContent=now<start?`${dd} days until tee-off`:now<end?'Trip is on. Fairways!':'Trip complete';
+show(ls.get('tab','overview'));
+</script>
+</body>
+</html>
