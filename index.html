@@ -5,49 +5,71 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mesquite Golf Trip 2027</title>
 <style>
-:root{--bg:#0f1f17;--card:#173024;--ink:#f1efe6;--mute:#a9b8ac;--acc:#e8c45a;--line:#2a4a39;--ok:#6fcf8f}
+:root{--sky:#27b4ff;--sun:#ffd23f;--grass:#2ecc71;--deep:#0b6b3a;--coral:#ff5a5f;--grape:#7b4bff;--ink:#16324f;--card:#ffffff;--bg:#fff8e6;--mute:#5a7089}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,Segoe UI,Roboto,sans-serif}
-header{padding:28px 16px 16px;text-align:center;background:linear-gradient(#1c3d2b,var(--bg))}
-h1{margin:0;font-size:1.9rem;letter-spacing:.5px}
-.sub{color:var(--mute);margin:.3rem 0 0}
-#count{display:inline-block;margin-top:14px;padding:8px 16px;border:1px solid var(--acc);border-radius:99px;color:var(--acc);font-weight:600}
-main{max-width:760px;margin:0 auto;padding:0 16px 60px}
-.tabs{display:flex;gap:6px;overflow-x:auto;position:sticky;top:0;background:var(--bg);padding:10px 0;z-index:5}
-.tabs button{flex:1;min-width:76px;padding:10px 6px;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:10px;font:inherit;cursor:pointer}
-.tabs button.on{background:var(--acc);color:#1a1a1a;font-weight:700;border-color:var(--acc)}
-.tabs small{display:block;font-size:.72rem;opacity:.8}
-.panel{display:none}.panel.on{display:block}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
-.card h3{margin:0 0 4px}
-.time{color:var(--acc);font-weight:700}
-.meta{color:var(--mute);font-size:.9rem}
-.tag{display:inline-block;font-size:.72rem;padding:2px 8px;border-radius:99px;background:#3a3216;color:var(--acc);margin-left:6px;vertical-align:middle}
-a{color:var(--acc)}
-.links a{display:inline-block;margin:6px 12px 0 0;font-size:.9rem}
-label.chk{display:flex;gap:10px;align-items:flex-start;padding:6px 0;cursor:pointer}
-label.chk input{margin-top:5px;width:18px;height:18px;accent-color:var(--ok)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Trebuchet MS",system-ui,Segoe UI,sans-serif}
+header{position:relative;text-align:center;color:#fff;padding:34px 16px 70px;background:linear-gradient(160deg,var(--sky),var(--grape) 60%,var(--coral));overflow:hidden}
+header:before{content:"";position:absolute;inset:0;background:url(img/hero.jpg) center/cover;opacity:.22}
+header>*{position:relative}
+h1{margin:0;font-size:2.4rem;line-height:1.1;text-shadow:3px 3px 0 rgba(0,0,0,.2);transform:rotate(-1.5deg)}
+.sub{margin:.5rem 0 0;font-weight:700}
+#count{display:inline-block;margin-top:14px;padding:9px 20px;background:var(--sun);color:var(--ink);border-radius:99px;font-weight:900;box-shadow:0 4px 0 #c99a00;transform:rotate(1.5deg)}
+.wave{position:absolute;left:0;right:0;bottom:-1px;height:40px;background:var(--bg);clip-path:ellipse(60% 100% at 50% 100%)}
+main{max-width:780px;margin:-20px auto 0;padding:0 14px 60px;position:relative}
+.tabs{display:flex;gap:7px;overflow-x:auto;position:sticky;top:0;background:var(--bg);padding:10px 0;z-index:5}
+.tabs button{flex:1;min-width:74px;padding:9px 6px;background:#fff;color:var(--ink);border:3px solid var(--ink);border-radius:14px;font:inherit;font-weight:800;cursor:pointer;box-shadow:0 3px 0 var(--ink);transition:transform .1s}
+.tabs button:active{transform:translateY(3px);box-shadow:none}
+.tabs button.on{background:var(--coral);color:#fff}
+.tabs small{display:block;font-size:.7rem;opacity:.85;font-weight:600}
+.panel{display:none}.panel.on{display:block;animation:pop .25s}
+@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+h2{font-size:1.6rem;margin:14px 0 4px}
+.card{background:var(--card);border:3px solid var(--ink);border-radius:18px;padding:0;margin:14px 0;box-shadow:5px 5px 0 var(--ink);overflow:hidden}
+.card .body{padding:12px 16px 14px}
+.card h3{margin:2px 0 4px;font-size:1.25rem}
+.art{height:110px;position:relative;overflow:hidden}
+.art svg{width:100%;height:100%;display:block}
+.photo{height:170px;background-size:cover;background-position:center}
+.time{display:inline-block;background:var(--ink);color:var(--sun);font-weight:900;padding:2px 12px;border-radius:99px;font-size:.9rem}
+.meta{color:var(--mute);font-size:.92rem}
+.tag{display:inline-block;font-size:.72rem;font-weight:800;padding:2px 9px;border-radius:99px;margin-left:6px;vertical-align:middle;color:#fff;background:var(--grape)}
+.tag.b{background:#e68a00}.tag.t{background:var(--coral)}.tag.g{background:var(--grass);color:var(--ink)}
+.links a{display:inline-block;margin:8px 8px 0 0;padding:5px 14px;background:var(--sky);color:#fff;text-decoration:none;font-weight:800;font-size:.88rem;border-radius:99px;border:2px solid var(--ink)}
+.links a.beer{background:var(--sun);color:var(--ink)}
+.beerbar{background:linear-gradient(90deg,#ffb400,#ffd23f);padding:8px 16px;font-weight:800;border-top:3px solid var(--ink)}
+label.chk{display:flex;gap:10px;align-items:flex-start;padding:7px 0;cursor:pointer}
+label.chk input{margin-top:5px;width:20px;height:20px;accent-color:var(--grass)}
 label.chk input:checked+span{text-decoration:line-through;color:var(--mute)}
-textarea{width:100%;min-height:90px;background:#0f1f17;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:10px;font:inherit}
+textarea{width:100%;min-height:90px;background:#f3fbff;color:var(--ink);border:3px solid var(--ink);border-radius:12px;padding:10px;font:inherit}
 table{width:100%;border-collapse:collapse}
-td,th{padding:8px 4px;border-bottom:1px solid var(--line);text-align:left}
-input.score{width:46px;background:#0f1f17;color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:5px;text-align:center}
-.warn{border-color:#8a6d1c;background:#2a2412}
-footer{text-align:center;color:var(--mute);font-size:.8rem;padding:20px}
+td,th{padding:7px 4px;border-bottom:2px dashed #cfe3f2;text-align:left}
+input.score{width:52px;background:#f3fbff;color:var(--ink);border:2px solid var(--ink);border-radius:8px;padding:5px;text-align:center;font:inherit;font-weight:700}
+input.name{width:84px}
+.warn{background:#fff3c4}
+.beer-row{display:flex;align-items:center;gap:6px;padding:6px 0;flex-wrap:wrap}
+.beer-row b{min-width:84px}
+.beer-row button{width:34px;height:34px;border-radius:50%;border:3px solid var(--ink);background:var(--sun);font-weight:900;font-size:1.1rem;cursor:pointer;box-shadow:0 3px 0 var(--ink)}
+.beer-row button:active{transform:translateY(3px);box-shadow:none}
+.mugs{flex:1;min-width:120px;font-size:1.2rem;word-break:break-all}
+.big{font-size:2rem;text-align:center;font-weight:900}
+.pop{animation:bounce .4s}@keyframes bounce{40%{transform:scale(1.25) rotate(-6deg)}}
+footer{text-align:center;color:var(--mute);font-size:.78rem;padding:10px 16px 30px}
 </style>
 </head>
 <body>
 <header>
-  <h1>⛳ Mesquite Golf Trip</h1>
-  <p class="sub">Jan 22 – 25, 2027 · 4 golfers · 2 rooms (2 queens each) · 3 nights</p>
+  <h1>⛳ Mesquite Golf Trip 🍺</h1>
+  <p class="sub">Jan 22 – 25, 2027 · 4 golfers · 6 rounds · 3 nights</p>
   <div id="count"></div>
+  <div class="wave"></div>
 </header>
 <main>
   <div class="tabs" id="tabs"></div>
 
   <section class="panel" id="p-overview">
-    <div class="card warn"><strong>Status: inquiry only.</strong> The GolfNevada request for the Wolf Creek – Mesquite package went out 11/8/2026. Nothing below is confirmed yet. Tee times are the requested ones and the hotel is only a maybe (Eureka Casino). Tick things off in the Checklist tab as they lock in.</div>
-    <div class="card"><h3>The plan at a glance</h3>
+    <div class="card warn"><div class="body"><strong>🚧 Status: inquiry only.</strong> The GolfNevada request for the Wolf Creek – Mesquite package went out 11/8/2026. Nothing below is confirmed yet. Tee times are the requested ones and the hotel is only a maybe (Eureka Casino). Tick things off in the Checklist tab as they lock in.</div></div>
+    <div class="card"><div class="photo" style="background-image:url(img/town.jpg)"></div><div class="body"><h3>🌵 Mesquite, Nevada</h3><div class="meta">Snow on the peaks, palm trees on the street, six rounds on the schedule.</div></div></div>
+    <div class="card"><div class="body"><h3>The plan at a glance</h3>
       <table>
         <tr><th>Day</th><th>Morning</th><th>Afternoon</th></tr>
         <tr><td>Fri 1/22</td><td>Travel</td><td>Wolf Creek ~11 AM</td></tr>
@@ -55,16 +77,16 @@ footer{text-align:center;color:var(--mute);font-size:.8rem;padding:20px}
         <tr><td>Sun 1/24</td><td>Oasis Canyons 7:30</td><td>CasaBlanca ~1 PM</td></tr>
         <tr><td>Mon 1/25</td><td>Coyote Springs 9–10</td><td>Drive home</td></tr>
       </table>
-      <p class="meta">6 rounds in 4 days. Saturday and Sunday are 36-hole days.</p>
-    </div>
-    <div class="card"><h3>Lodging <span class="tag">Tentative</span></h3>
+      <p class="meta">Saturday and Sunday are 36-hole days. Hydrate. With water. Between the beers.</p>
+    </div></div>
+    <div class="card"><div class="body"><h3>🏨 Lodging <span class="tag t">Tentative</span></h3>
       <p class="meta">Possibly Eureka Casino Resort, Mesquite. Not booked or confirmed. Need 2 rooms, 2 queens each, Fri to Mon.</p>
       <div class="links"><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Eureka+Casino+Resort+Mesquite+NV">Map</a><a target="_blank" rel="noopener" href="https://www.google.com/search?q=Eureka+Casino+Resort+Mesquite+NV+rates">Rates</a></div>
-    </div>
-    <div class="card"><h3>Source</h3>
+    </div></div>
+    <div class="card"><div class="body"><h3>📨 Source</h3>
       <p class="meta">Package: Wolf Creek – Mesquite Golf Package on GolfNevada.com. Wolf Creek is the contact for booking and will reach out directly.</p>
       <div class="links"><a href="https://www.golfnevada.com/stayandplay/28227" target="_blank" rel="noopener">View package</a></div>
-    </div>
+    </div></div>
   </section>
 
   <section class="panel" id="p-fri"></section>
@@ -72,52 +94,79 @@ footer{text-align:center;color:var(--mute);font-size:.8rem;padding:20px}
   <section class="panel" id="p-sun"></section>
   <section class="panel" id="p-mon"></section>
 
+  <section class="panel" id="p-beer">
+    <div class="card"><div class="body"><h3>🍺 Beer Tab</h3>
+      <p class="meta">Tap + for every cold one. Drink responsibly, designate a driver, and don't be the guy driving the cart sideways.</p>
+      <div id="beers"></div>
+      <div class="big" id="beertotal"></div>
+    </div></div>
+    <div class="card"><div class="body"><h3>🍻 Where to find a cold one</h3>
+      <p class="meta">Beer cart on the course, the bar at each clubhouse, and the casino floors. Searches below open in Maps.</p>
+      <div class="links">
+        <a class="beer" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=craft+beer+Mesquite+NV">Craft beer</a>
+        <a class="beer" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=brewery+Mesquite+NV">Breweries</a>
+        <a class="beer" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=sports+bar+Mesquite+NV">Sports bars</a>
+        <a class="beer" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=liquor+store+Mesquite+NV">Stock the room</a>
+      </div>
+    </div></div>
+    <div class="card"><div class="body"><h3>🎲 Beer rules (optional)</h3>
+      <p>🏌️ Birdie: everyone else drinks.<br>🌊 Water ball: you buy the next round.<br>🥶 Last place after 18 buys dinner beers.<br>🍺 Eagle: free beer, no argument.</p>
+    </div></div>
+  </section>
+
   <section class="panel" id="p-check">
-    <div class="card"><h3>Booking checklist</h3><div id="checks"></div></div>
-    <div class="card"><h3>Notes</h3><textarea id="notes" placeholder="Rental cars, who's driving, confirmation numbers, dinner spots..."></textarea></div>
+    <div class="card"><div class="body"><h3>✅ Booking checklist</h3><div id="checks"></div></div></div>
+    <div class="card"><div class="body"><h3>📝 Notes</h3><textarea id="notes" placeholder="Rental cars, who's driving, confirmation numbers, dinner spots..."></textarea></div></div>
   </section>
 
   <section class="panel" id="p-score">
-    <div class="card"><h3>Scorecard</h3>
+    <div class="card"><div class="body"><h3>🏆 Scorecard</h3>
       <p class="meta">Total strokes per round. Saved on this device only.</p>
       <div id="score"></div>
-    </div>
+    </div></div>
   </section>
 </main>
-<footer>Saved on this device only. Courses and times are requests, not confirmations.</footer>
+<footer>Saved on this device only. Courses and times are requests, not confirmations.<br>
+Photos: Stan Shebs via Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a> (Mesquite street scene, CasaBlanca Resort, Mesquite banner). Course illustrations are original art, not photos of the courses.</footer>
 
 <script>
+function scene(a,b,c,flag){ // illustrated course banner
+ return `<svg viewBox="0 0 400 110" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="s${flag}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient></defs>
+ <rect width="400" height="110" fill="url(#s${flag})"/><circle cx="${60+flag*40}" cy="30" r="20" fill="#fff3a0"/>
+ <path d="M0 70 Q80 50 160 68 T320 60 T400 66 V110 H0Z" fill="${c}"/><path d="M0 88 Q120 70 220 86 T400 80 V110 H0Z" fill="#26b35b"/>
+ <ellipse cx="290" cy="90" rx="26" ry="6" fill="#1f9a4c"/><rect x="289" y="52" width="2.5" height="38" fill="#fff"/><path d="M291 52 l22 8 -22 8z" fill="#ff5a5f"/><circle cx="260" cy="94" r="4" fill="#fff"/></svg>`;
+}
 const days=[
  {id:'fri',label:'Fri',date:'Jan 22',title:'Friday, Jan 22',items:[
-  {t:'Morning',n:'Travel to Mesquite',d:'Arrive, drop bags, check-in may not be open yet. Plan to head straight to the course.',tag:'Travel'},
-  {t:'~11:00 AM',n:'Wolf Creek Golf Club',d:'Requested tee time. The package host. Confirm group of 4 and cart.',q:'Wolf Creek Golf Course Mesquite NV'},
-  {t:'Evening',n:'Check in at Eureka Casino Resort (maybe)',d:'Hotel is tentative, not booked. Dinner on site or in town.',tag:'Tentative',q:'Eureka Casino Resort Mesquite NV'}]},
+  {t:'Morning',n:'🚗 Travel to Mesquite',d:'Arrive, drop bags, check-in may not be open yet. Plan to head straight to the course.',tag:'Travel',cls:'b'},
+  {t:'~11:00 AM',n:'Wolf Creek Golf Club',d:'Requested tee time. The package host. Confirm group of 4 and cart.',q:'Wolf Creek Golf Course Mesquite NV',art:['#27b4ff','#bde9ff','#e9a15b',0],beer:'First beer of the trip. Grab it at the turn.'},
+  {t:'Evening',n:'🏨 Check in at Eureka Casino Resort (maybe)',d:'Hotel is tentative, not booked. Dinner on site or in town.',tag:'Tentative',cls:'t',q:'Eureka Casino Resort Mesquite NV',beer:'Opening night. Toast the trip.'}]},
  {id:'sat',label:'Sat',date:'Jan 23',title:'Saturday, Jan 23',items:[
-  {t:'7:30 AM',n:'Conestoga Golf Club',d:'Early start, Mesquite. Round one of the 36.',q:'Conestoga Golf Club Mesquite NV'},
-  {t:'Midday',n:'Lunch and reset',d:'Short break between rounds.',tag:'Break'},
-  {t:'~1:00 PM',n:'Oasis Golf Club – Palmer',d:'Arnold Palmer designed course at the Oasis.',q:'Oasis Golf Club Palmer Course Mesquite NV'},
-  {t:'Evening',n:'Dinner',d:'Open.',tag:'Open'}]},
+  {t:'7:30 AM',n:'Conestoga Golf Club',d:'Early start, Mesquite. Round one of the 36.',q:'Conestoga Golf Club Mesquite NV',art:['#ff9a5a','#ffe0a8','#c9774a',1],beer:'Early tee time. Coffee first, beer at the turn.'},
+  {t:'Midday',n:'🌮 Lunch and reset',d:'Short break between rounds.',tag:'Break',cls:'b',beer:'Cold one with lunch.'},
+  {t:'~1:00 PM',n:'Oasis Golf Club – Palmer',d:'Arnold Palmer designed course at the Oasis.',q:'Oasis Golf Club Palmer Course Mesquite NV',art:['#7b4bff','#c9b5ff','#5aa6d6',2],beer:'Palmers pair well with a Palmer.'},
+  {t:'Evening',n:'🍽️ Dinner',d:'Open.',tag:'Open',beer:'Big Saturday night. Pick a spot with taps.'}]},
  {id:'sun',label:'Sun',date:'Jan 24',title:'Sunday, Jan 24',items:[
-  {t:'7:30 AM',n:'Oasis Golf Club – Canyons',d:'Second Oasis layout.',q:'Oasis Golf Club Canyons Course Mesquite NV'},
-  {t:'Midday',n:'Lunch and reset',d:'Short break between rounds.',tag:'Break'},
-  {t:'~1:00 PM',n:'CasaBlanca Golf Club',d:'Afternoon round, Mesquite.',q:'CasaBlanca Golf Club Mesquite NV'},
-  {t:'Evening',n:'Last night dinner',d:'Open.',tag:'Open'}]},
+  {t:'7:30 AM',n:'Oasis Golf Club – Canyons',d:'Second Oasis layout.',q:'Oasis Golf Club Canyons Course Mesquite NV',art:['#27d3b4','#c9fff1','#d98b5f',3],beer:'Canyon carries. Pace yourself.'},
+  {t:'Midday',n:'🌮 Lunch and reset',d:'Short break between rounds.',tag:'Break',cls:'b',beer:'Cold one with lunch.'},
+  {t:'~1:00 PM',n:'CasaBlanca Golf Club',d:'Afternoon round, Mesquite. Home of the pink resort.',q:'CasaBlanca Golf Club Mesquite NV',photo:'img/casablanca.jpg',beer:'Resort bar after the round.'},
+  {t:'Evening',n:'🍽️ Last night dinner',d:'Open.',tag:'Open',beer:'Final night. Settle the bets.'}]},
  {id:'mon',label:'Mon',date:'Jan 25',title:'Monday, Jan 25',items:[
-  {t:'Morning',n:'Check out',d:'Check out of both rooms before heading to the course.',tag:'Hotel'},
-  {t:'9–10 AM',n:'Coyote Springs Golf Club',d:'Final round. Coyote Springs is a drive from Mesquite (roughly an hour, verify). Leave early enough for the tee time.',q:'Coyote Springs Golf Club Nevada'},
-  {t:'After',n:'Drive home',d:'',tag:'Travel'}]}
+  {t:'Morning',n:'🧳 Check out',d:'Check out of both rooms before heading to the course.',tag:'Hotel',cls:'b'},
+  {t:'9–10 AM',n:'Coyote Springs Golf Club',d:'Final round. Coyote Springs is a drive from Mesquite (roughly an hour, verify). Leave early enough for the tee time.',q:'Coyote Springs Golf Club Nevada',art:['#ff5a8a','#ffd1e0','#b98a5f',4],beer:'Victory beer at the 19th hole.'},
+  {t:'After',n:'🚗 Drive home',d:'Designated driver gets the first pick of the playlist.',tag:'Travel',cls:'b'}]}
 ];
-const checks=['Reply to Wolf Creek rep and confirm package price','Decide and book lodging (Eureka Casino?): 2 rooms, 2 queens each, Fri to Mon','Lock Fri Wolf Creek ~11 AM','Lock Sat Conestoga 7:30 AM','Lock Sat Oasis Palmer ~1 PM','Lock Sun Oasis Canyons 7:30 AM','Lock Sun CasaBlanca ~1 PM','Lock Mon Coyote Springs 9-10 AM','Sort cars and who is driving','Collect money from the other 3 golfers','Decide on shipping clubs or hauling them'];
+const checks=['Reply to Wolf Creek rep and confirm package price','Decide and book lodging (Eureka Casino?): 2 rooms, 2 queens each, Fri to Mon','Lock Fri Wolf Creek ~11 AM','Lock Sat Conestoga 7:30 AM','Lock Sat Oasis Palmer ~1 PM','Lock Sun Oasis Canyons 7:30 AM','Lock Sun CasaBlanca ~1 PM','Lock Mon Coyote Springs 9-10 AM','Sort cars and who is driving','Collect money from the other 3 golfers','Decide on shipping clubs or hauling them','Buy the beer (and the water)'];
 const $=s=>document.querySelector(s);
 const ls={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 
-const tabs=[['overview','Overview',''],...days.map(d=>[d.id,d.label,d.date]),['check','Checklist',''],['score','Scores','']];
-$('#tabs').innerHTML=tabs.map(t=>`<button data-t="${t[0]}">${t[1]}<small>${t[2]||'&nbsp;'}</small></button>`).join('');
+const tabs=[['overview','Overview','🏌️'],...days.map(d=>[d.id,d.label,d.date]),['beer','Beer','🍺'],['check','Checklist','✅'],['score','Scores','🏆']];
+$('#tabs').innerHTML=tabs.map(t=>`<button data-t="${t[0]}">${t[1]}<small>${t[2]}</small></button>`).join('');
 function show(id){document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id==='p-'+id));document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('on',b.dataset.t===id));ls.set('tab',id);window.scrollTo(0,0)}
 $('#tabs').onclick=e=>{const b=e.target.closest('button');if(b)show(b.dataset.t)};
 
 days.forEach(d=>{
- $('#p-'+d.id).innerHTML=`<h2>${d.title}</h2>`+d.items.map(i=>`<div class="card"><div class="time">${i.t}${i.tag?`<span class="tag">${i.tag}</span>`:''}</div><h3>${i.n}</h3>${i.d?`<div class="meta">${i.d}</div>`:''}${i.q?`<div class="links"><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(i.q)}">Map</a><a target="_blank" rel="noopener" href="https://www.google.com/search?q=${encodeURIComponent(i.q+' tee times')}">Tee times</a></div>`:''}</div>`).join('');
+ $('#p-'+d.id).innerHTML=`<h2>${d.title}</h2>`+d.items.map(i=>`<div class="card">${i.photo?`<div class="photo" style="background-image:url(${i.photo})"></div>`:i.art?`<div class="art">${scene(...i.art)}</div>`:''}<div class="body"><span class="time">${i.t}</span>${i.tag?`<span class="tag ${i.cls||''}">${i.tag}</span>`:''}<h3>${i.n}</h3>${i.d?`<div class="meta">${i.d}</div>`:''}${i.q?`<div class="links"><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(i.q)}">📍 Map</a><a target="_blank" rel="noopener" href="https://www.google.com/search?q=${encodeURIComponent(i.q+' tee times')}">⏰ Tee times</a></div>`:''}</div>${i.beer?`<div class="beerbar">🍺 ${i.beer}</div>`:''}</div>`).join('');
 });
 
 const done=ls.get('checks',{});
@@ -130,16 +179,25 @@ const rounds=['Wolf Creek','Conestoga','Oasis Palmer','Oasis Canyons','CasaBlanc
 const sc=ls.get('scores',{});const names=ls.get('names',players);
 function drawScore(){
  const tot=names.map((_,p)=>rounds.reduce((s,_r,r)=>s+(+sc[p+'-'+r]||0),0));
- $('#score').innerHTML=`<div style="overflow-x:auto"><table><tr><th>Round</th>${names.map((n,p)=>`<th><input class="score" style="width:80px" data-n="${p}" value="${n}"></th>`).join('')}</tr>`+
+ $('#score').innerHTML=`<div style="overflow-x:auto"><table><tr><th>Round</th>${names.map((n,p)=>`<th><input class="score name" data-n="${p}" value="${n}"></th>`).join('')}</tr>`+
  rounds.map((r,ri)=>`<tr><td>${r}</td>${names.map((_,p)=>`<td><input class="score" inputmode="numeric" data-s="${p}-${ri}" value="${sc[p+'-'+ri]||''}"></td>`).join('')}</tr>`).join('')+
  `<tr><th>Total</th>${tot.map(t=>`<th>${t||'-'}</th>`).join('')}</tr></table></div>`;
 }
 drawScore();
-$('#score').onchange=e=>{const t=e.target;if(t.dataset.n!=null){names[t.dataset.n]=t.value;ls.set('names',names)}else if(t.dataset.s){sc[t.dataset.s]=t.value;ls.set('scores',sc)}drawScore()};
+$('#score').onchange=e=>{const t=e.target;if(t.dataset.n!=null){names[t.dataset.n]=t.value;ls.set('names',names)}else if(t.dataset.s){sc[t.dataset.s]=t.value;ls.set('scores',sc)}drawScore();drawBeer()};
+
+const beers=ls.get('beers',{});
+function drawBeer(){
+ let all=0;
+ $('#beers').innerHTML=names.map((n,p)=>{const c=+beers[p]||0;all+=c;return `<div class="beer-row"><b>${n}</b><button data-b="${p}" data-d="-1">−</button><button data-b="${p}" data-d="1">+</button><span class="mugs">${'🍺'.repeat(Math.min(c,30))||'<span class="meta">dry so far</span>'}</span><b>${c}</b></div>`}).join('');
+ $('#beertotal').innerHTML=all?`🍻 ${all} beers and counting`:'🍻 Nothing poured yet';
+}
+$('#beers').onclick=e=>{const b=e.target.closest('button');if(!b)return;const p=b.dataset.b;beers[p]=Math.max(0,(+beers[p]||0)+(+b.dataset.d));ls.set('beers',beers);drawBeer();if(b.dataset.d==='1'){const t=$('#beertotal');t.classList.remove('pop');void t.offsetWidth;t.classList.add('pop')}};
+drawBeer();
 
 const start=new Date(2027,0,22),end=new Date(2027,0,26),now=new Date();
 const dd=Math.ceil((start-now)/864e5);
-$('#count').textContent=now<start?`${dd} days until tee-off`:now<end?'Trip is on. Fairways!':'Trip complete';
+$('#count').textContent=now<start?`⏳ ${dd} days until tee-off`:now<end?'🔥 Trip is on. Fairways!':'🏁 Trip complete';
 show(ls.get('tab','overview'));
 </script>
 </body>
