@@ -69,7 +69,7 @@ footer{text-align:center;color:var(--mute);font-size:.76rem;padding:10px 20px 34
 <header class="hero">
   <div class="hero-in">
     <div class="brand">Mesquite Major<span>Nevada &middot; January 2027</span></div>
-    <h1>Brian. Ron. Ed. Bob.<br>Six rounds.<br>One <em>Major.</em></h1>
+    <h1>Brian. Ron. Ed. Bob.<br>Four rounds.<br>One <em>Major.</em></h1>
     <p class="lede">Mesquite, Nevada, Jan 22 &ndash; 25. Tee times, itinerary, beer count and scorecard in one place.</p>
     <div id="count"></div>
   </div>
@@ -79,26 +79,26 @@ footer{text-align:center;color:var(--mute);font-size:.76rem;padding:10px 20px 34
   <div class="tabwrap" id="tabwrap"><button class="arr l" id="arrL" aria-label="Scroll tabs left">&#8249;</button><div class="tabs" id="tabs"></div><button class="arr r" id="arrR" aria-label="Scroll tabs right">&#8250;</button></div>
 
   <section class="panel" id="p-overview">
-    <div class="card warn"><div class="body"><strong>Status: inquiry only.</strong> The GolfNevada request for the Wolf Creek – Mesquite package went out 11/8/2026. Nothing below is confirmed yet. Tee times are the requested ones and the hotel is only a maybe (Eureka Casino). Tick things off in the Checklist tab as they lock in.</div></div>
-    <div class="card"><div class="photo" style="background-image:url(img/town.jpg)"></div><div class="body"><h3>Mesquite, Nevada</h3><div class="meta">Snow on the peaks, palm trees on the street, six rounds on the schedule.</div></div></div>
+    <div class="card warn"><div class="body"><strong>Status: quote in hand, nothing booked.</strong> Eureka Casino Resort quoted the package direct on 11/23/2026: <strong>$1,010 per golfer</strong> with 2 golfers per room ($4,040 for the four of us). It covers 3 nights with tax and resort fees plus 4 rounds each. Still to confirm with Eureka: Oasis Canyons instead of the quoted Palmer, carts, guaranteed foursome tee times, deposit, cancellation and a price lock. Tick things off in the Checklist tab as they lock in.</div></div>
+    <div class="card"><div class="photo" style="background-image:url(img/town.jpg)"></div><div class="body"><h3>Mesquite, Nevada</h3><div class="meta">Snow on the peaks, palm trees on the street, four rounds on the schedule.</div></div></div>
     <div class="card"><div class="crewimg"><img src="img/crew.jpg?v=2" alt="Cartoon of Brian, Ron, Ed and Bob racing two golf carts down the fairway" width="1000" height="1465"></div><div class="body"><h3>The Crew</h3><div class="meta">Brian, Ron, Ed and Bob. Two carts, zero chance of staying in the fairway.</div></div></div>
     <div class="card"><div class="body"><h3>The plan at a glance</h3>
       <table>
-        <tr><th>Day</th><th>Morning</th><th>Afternoon</th></tr>
-        <tr><td>Fri 1/22</td><td>Travel</td><td>Wolf Creek ~11 AM</td></tr>
-        <tr><td>Sat 1/23</td><td>Conestoga 7:30</td><td>Oasis Palmer ~1 PM</td></tr>
-        <tr><td>Sun 1/24</td><td>Oasis Canyons 7:30</td><td>CasaBlanca ~1 PM</td></tr>
-        <tr><td>Mon 1/25</td><td>Coyote Springs 9–10</td><td>Drive home</td></tr>
+        <tr><th>Day</th><th>Round</th><th>Target tee time</th></tr>
+        <tr><td>Fri 1/22</td><td>Wolf Creek</td><td>~11:00 AM</td></tr>
+        <tr><td>Sat 1/23</td><td>Oasis (Canyons requested, Palmer quoted)</td><td>~10:00 AM</td></tr>
+        <tr><td>Sun 1/24</td><td>Conestoga</td><td>~10:00 AM</td></tr>
+        <tr><td>Mon 1/25</td><td>Coyote Springs, then drive home</td><td>~9:30 AM</td></tr>
       </table>
-      <p class="meta">Saturday and Sunday are 36-hole days. Hydrate. With water. Between the beers.</p>
+      <p class="meta">One round a day: January daylight is short, so no doubles. Hydrate. With water. Between the beers.</p>
     </div></div>
-    <div class="card"><div class="body"><h3>Lodging <span class="tag t">Tentative</span></h3>
-      <p class="meta">Possibly Eureka Casino Resort, Mesquite. Not booked or confirmed. Need 2 rooms, 2 queens each, Fri to Mon.</p>
+    <div class="card"><div class="body"><h3>Lodging <span class="tag t">Quoted</span></h3>
+      <p class="meta">Eureka Casino Resort, Mesquite. 2 rooms, 2 golfers each, Fri 1/22 to Mon 1/25 (3 nights). Quoted $1,010 per golfer including tax, resort fees and 4 rounds of golf. Not booked yet, and the quote isn't price-locked until it is.</p>
       <div class="links"><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Eureka+Casino+Resort+Mesquite+NV">Map</a><a target="_blank" rel="noopener" href="https://www.google.com/search?q=Eureka+Casino+Resort+Mesquite+NV+rates">Rates</a></div>
     </div></div>
     <div class="card"><div class="body"><h3>Source</h3>
-      <p class="meta">Package: Wolf Creek – Mesquite Golf Package on GolfNevada.com. Wolf Creek is the contact for booking and will reach out directly.</p>
-      <div class="links"><a href="https://www.golfnevada.com/stayandplay/28227" target="_blank" rel="noopener">View package</a></div>
+      <p class="meta">Eureka Casino Resort golf package quote, 11/23/2026: $1,010 per golfer at 2 per room ($1,330 if a golfer takes a room alone). Prices can change until booked. A reseller quoted $1,129 per golfer for the same trip, so booking direct saves about $476 for the group. The earlier GolfNevada inquiry (11/8) was for six rounds.</p>
+      <div class="links"><a href="https://www.golfnevada.com/stayandplay/28227" target="_blank" rel="noopener">GolfNevada package</a></div>
     </div></div>
   </section>
 
@@ -152,26 +152,24 @@ function scene(a,b,c,flag){ // illustrated course banner
 const strip=x=>x.replace(/\p{Extended_Pictographic}\uFE0F?\s*/gu,'');
 const days=[
  {id:'fri',label:'Fri',date:'Jan 22',title:'Friday, Jan 22',items:[
-  {t:'Morning',n:'🚗 Travel to Mesquite',d:'Arrive, drop bags, check-in may not be open yet. Plan to head straight to the course.',tag:'Travel',cls:'b'},
-  {t:'~11:00 AM',n:'Wolf Creek Golf Club',d:'Requested tee time. The package host. Confirm group of 4 and cart.',q:'Wolf Creek Golf Course Mesquite NV',photos:['wolfcreek','wolfcreek2'],beer:'First beer of the trip. Grab it at the turn.'},
+  {t:'Morning',n:'🚗 Travel to Mesquite',d:'Arrive and head straight to the course. Check-in may not be open yet, so ask Eureka about early check-in or holding bags.',tag:'Travel',cls:'b'},
+  {t:'~11:00 AM',n:'Wolf Creek Golf Club',d:'Requested tee time. Confirm the foursome and carts.',q:'Wolf Creek Golf Course Mesquite NV',photos:['wolfcreek','wolfcreek2'],beer:'First beer of the trip. Grab it at the turn.'},
   {t:'After golf',n:'Late lunch',d:'Eat before checking in.',tag:'Lunch',cls:'b',eat:[{"n": "The Terrace at Wolf Creek", "d": "Clubhouse restaurant with views over the course; American staples. The clubhouse was renovated and reopened Oct 1.", "q": "Terrace Restaurant Wolf Creek Golf Club Mesquite NV"}]},
-  {t:'Evening',n:'🏨 Check in at Eureka Casino Resort (maybe)',d:'Hotel is tentative, not booked. Dinner on site or in town.',tag:'Tentative',cls:'t',q:'Eureka Casino Resort Mesquite NV',beer:'Opening night. Toast the trip.',eat:[{"n": "Gregory's Mesquite Grill", "d": "Steakhouse inside Eureka, one of the top-rated rooms in town. Reviewers mention an early-bird special around 4-5 PM.", "q": "Gregory's Mesquite Grill Eureka Casino Mesquite NV"}, {"n": "Los Lupes Mexican Restaurant", "d": "Longtime local favorite: margaritas, chips and salsa. Good casual first night after the drive.", "q": "Los Lupes Mexican Restaurant Mesquite NV"}]}]},
+  {t:'Evening',n:'🏨 Check in at Eureka Casino Resort',d:'Quoted, not booked yet. 2 rooms, 2 golfers each. Dinner on site or in town.',tag:'Quoted',cls:'t',q:'Eureka Casino Resort Mesquite NV',beer:'Opening night. Toast the trip.',eat:[{"n": "Gregory's Mesquite Grill", "d": "Steakhouse inside Eureka, one of the top-rated rooms in town. Reviewers mention an early-bird special around 4-5 PM.", "q": "Gregory's Mesquite Grill Eureka Casino Mesquite NV"}, {"n": "Los Lupes Mexican Restaurant", "d": "Longtime local favorite: margaritas, chips and salsa. Good casual first night after the drive.", "q": "Los Lupes Mexican Restaurant Mesquite NV"}]}]},
  {id:'sat',label:'Sat',date:'Jan 23',title:'Saturday, Jan 23',items:[
-  {t:'7:30 AM',n:'Conestoga Golf Club',d:'Early start, Mesquite. Round one of the 36.',q:'Conestoga Golf Club Mesquite NV',photos:['conestoga1','conestoga2'],beer:'Early tee time. Coffee first, beer at the turn.'},
-  {t:'Midday',n:'🌮 Lunch and reset',d:'Short break between rounds.',tag:'Break',cls:'b',beer:'Cold one with lunch.',eat:[{"n": "Guru's at the Oasis", "d": "Casual clubhouse spot, classics and pizza. Your 1 PM round is at the Oasis, so eat here and walk to the tee.", "q": "Guru's at the Oasis Golf Club Mesquite NV"}, {"n": "1880 Grille at Conestoga", "d": "On site at Conestoga, right after the 7:30 round. Lunch hours not confirmed, so check before counting on it.", "q": "1880 Grille Conestoga Golf Club Mesquite NV"}]},
-  {t:'~1:00 PM',n:'Oasis Golf Club – Palmer',d:'Arnold Palmer designed course at the Oasis.',q:'Oasis Golf Club Palmer Course Mesquite NV',photos:['oasis1','oasis2'],beer:'Palmers pair well with a Palmer.'},
+  {t:'~10:00 AM',n:'Oasis Golf Club',d:'One round at the Oasis. We asked for the Canyons course; Eureka\'s quote lists the Palmer course, so which one is still to be confirmed.',q:'Oasis Golf Club Mesquite NV',photos:['oasis1','oasis3'],beer:'Late start, so coffee first and a beer at the turn.'},
+  {t:'After golf',n:'🌮 Lunch',d:'Eat at the Oasis clubhouse after the round.',tag:'Lunch',cls:'b',beer:'Cold one with lunch.',eat:[{"n": "Guru's at the Oasis", "d": "Casual clubhouse spot, classics and pizza.", "q": "Guru's at the Oasis Golf Club Mesquite NV"}, {"n": "The Worden (Oasis)", "d": "Second dining room at the Oasis with indoor and outdoor seating.", "q": "The Worden Oasis Golf Club Mesquite NV"}]},
   {t:'Evening',n:'🍽️ Dinner',d:'Pick one below, and book ahead for four.',tag:'Dinner',beer:'Big Saturday night. Pick a spot with taps.',eat:[{"n": "Katherine's Steakhouse (CasaBlanca)", "d": "USDA Prime beef, the big-night pick. CasaBlanca recommends reservations, so book early for four.", "q": "Katherine's Steakhouse CasaBlanca Resort Mesquite NV"}, {"n": "Samurai 21 Japanese Steakhouse", "d": "Teppanyaki show and sushi. Fun for a group of four.", "q": "Samurai 21 Japanese Steakhouse Mesquite NV"}]}]},
  {id:'sun',label:'Sun',date:'Jan 24',title:'Sunday, Jan 24',items:[
-  {t:'7:30 AM',n:'Oasis Golf Club – Canyons',d:'Second Oasis layout.',q:'Oasis Golf Club Canyons Course Mesquite NV',photos:['oasis3','oasis2'],beer:'Canyon carries. Pace yourself.'},
-  {t:'Midday',n:'🌮 Lunch and reset',d:'Short break between rounds.',tag:'Break',cls:'b',beer:'Cold one with lunch.',eat:[{"n": "Guru's at the Oasis", "d": "Right at the Canyons clubhouse after the 7:30 round. Classics and pizza.", "q": "Guru's at the Oasis Golf Club Mesquite NV"}, {"n": "The Worden (Oasis)", "d": "Second dining room at the Oasis with indoor and outdoor seating.", "q": "The Worden Oasis Golf Club Mesquite NV"}, {"n": "Players Bar (CasaBlanca)", "d": "Beer flights and drafts near the CasaBlanca showroom, close to the 1 PM tee.", "q": "Players Bar CasaBlanca Resort Mesquite NV"}]},
-  {t:'~1:00 PM',n:'CasaBlanca Golf Club',d:'Afternoon round, Mesquite. Home of the pink resort.',q:'CasaBlanca Golf Club Mesquite NV',photos:['casablanca2','casablanca3'],beer:'Resort bar after the round.'},
+  {t:'~10:00 AM',n:'Conestoga Golf Club',d:'Requested tee time. Confirm the foursome and carts.',q:'Conestoga Golf Club Mesquite NV',photos:['conestoga1','conestoga2'],beer:'Elevated tees. Pace yourself.'},
+  {t:'After golf',n:'🌮 Lunch',d:'Eat at the Conestoga clubhouse after the round.',tag:'Lunch',cls:'b',beer:'Cold one with lunch.',eat:[{"n": "1880 Grille at Conestoga", "d": "On site at Conestoga, right after the round. Lunch hours not confirmed, so check before counting on it.", "q": "1880 Grille Conestoga Golf Club Mesquite NV"}]},
   {t:'Evening',n:'🍽️ Last night dinner',d:'Pick one below, and book ahead for four.',tag:'Dinner',beer:'Final night. Settle the bets.',eat:[{"n": "Di' Bella Pizza", "d": "Hand-tossed pies, pasta and subs. Easy last-night feast.", "q": "Di Bella Pizza Mesquite NV"}, {"n": "Mason Street Courtyard", "d": "Casual menu, a local hangout.", "q": "Mason Street Courtyard Mesquite NV"}, {"n": "The Long Bar at Virgin River", "d": "A good spot to watch a game. Sunday Jan 24 is likely NFL conference championship day, so check the schedule.", "q": "Virgin River Casino Long Bar Mesquite NV"}]}]},
  {id:'mon',label:'Mon',date:'Jan 25',title:'Monday, Jan 25',items:[
   {t:'Morning',n:'🧳 Check out',d:'Check out of both rooms before heading to the course.',tag:'Hotel',cls:'b'},
-  {t:'9–10 AM',n:'Coyote Springs Golf Club',d:'Final round. Coyote Springs is a drive from Mesquite (roughly an hour, verify). Leave early enough for the tee time.',q:'Coyote Springs Golf Club Nevada',photos:['coyote1','coyote2'],beer:'Victory beer at the 19th hole.'},
+  {t:'~9:30 AM',n:'Coyote Springs Golf Club',d:'Final round. Coyote Springs is a drive from Mesquite (roughly an hour, verify) and sits on the way toward Vegas. Leave early enough for the tee time.',q:'Coyote Springs Golf Club Nevada',photos:['coyote1','coyote2'],beer:'Victory beer at the 19th hole.'},
   {t:'After',n:'🚗 Drive home',d:'Designated driver gets the first pick of the playlist.',tag:'Travel',cls:'b'}]}
 ];
-const checks=['Reply to Wolf Creek rep and confirm package price','Decide and book lodging (Eureka Casino?): 2 rooms, 2 queens each, Fri to Mon','Lock Fri Wolf Creek ~11 AM','Lock Sat Conestoga 7:30 AM','Lock Sat Oasis Palmer ~1 PM','Lock Sun Oasis Canyons 7:30 AM','Lock Sun CasaBlanca ~1 PM','Lock Mon Coyote Springs 9-10 AM','Sort cars and who is driving','Collect money from the other 3 golfers','Decide on shipping clubs or hauling them','Buy the beer (and the water)'];
+const checks=['Get Eureka answers: Canyons instead of Palmer, carts, foursome tee times, deposit, cancellation, price lock','Book the Eureka package: $1,010 per golfer, 2 per room, Fri to Mon','Lock Fri Wolf Creek ~11 AM','Lock Sat Oasis ~10 AM (Canyons if possible)','Lock Sun Conestoga ~10 AM','Lock Mon Coyote Springs ~9:30 AM','Sort cars and who is driving','Collect money from the other 3 golfers','Decide on shipping clubs or hauling them','Buy the beer (and the water)'];
 const $=s=>document.querySelector(s);
 const ls={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 
@@ -193,7 +191,7 @@ $('#checks').onchange=e=>{done[e.target.dataset.i]=e.target.checked;ls.set('chec
 $('#notes').value=ls.get('notes','');$('#notes').oninput=e=>ls.set('notes',e.target.value);
 
 const players=['Ron','Brian','Ed','Bob'];
-const rounds=['Wolf Creek','Conestoga','Oasis Palmer','Oasis Canyons','CasaBlanca','Coyote Springs'];
+const rounds=['Wolf Creek','Oasis','Conestoga','Coyote Springs'];
 const sc=ls.get('scores',{});const names=ls.get('names',players);
 function drawScore(){
  const tot=names.map((_,p)=>rounds.reduce((s,_r,r)=>s+(+sc[p+'-'+r]||0),0));
